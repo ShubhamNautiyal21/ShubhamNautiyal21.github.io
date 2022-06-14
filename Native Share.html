@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title >Every Creation has a creator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <style>
+
+body{
+  background-image:url('mainBg.jpg') !important; background-repeat:repeat !important; 
+}
+      button:active{
+ }
+
+
+      hr{  border: 0.5px solid rgba(0, 0, 0, 0.1);border-radius: 1px;}
+    body,h1,h2,h3,h4,h5 {font-family: "Papyrus", sans-serif}
+    p{ font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif}
+    a{font-family:'Times New Roman', Times, serif;}
+   .p{background-color: rgba(0, 0, 0, 0.175);}
+   #corners{border-radius: 10px;border-radius: 10px 15px 15px 10px;}
+   #more {display: none;}
+   #readMoreBTN{background-color: #393939; border: none;color: white;padding: 1px 3px;text-align: center;text-decoration: none;display: inline-block;font-size: 15px;margin-left: 1.5px;}
+   .headingClass{font-size: 0.7em;}
+ 
+   /* .movePositionImages{position: relative; top: -200px;} */
+   </style>
+  </head>
+<body class="p" oncontextmenu="return false;">
+<div class="w3-content" style="max-width:1400px">
+
+<body class="p" oncontextmenu="return false;">
+  <div class="w3-content" style="max-width:900px">
+  <header class="w3-container w3-center w3-padding-20"> 
+  
+  </header>
+<!-- <div class="w3-card w3-margin w3-margin-top w3-center" >
+  <div class="w3-container w3-white">
+    <p id="corners">Namaste,
+      My name is Shubham Nautiyal and I am a game developer,who loves to explore things,stay tuned for more updates.
+    </p>
+  </div>
+</div><hr> -->
+
+<!-- First vlog -->
+<div class="w3-col l20 s12 corner" >
+  <a href="index.html"><button  class="w3-hover-gray w3-animate-zoom w3-white w3-margin-left w3-margin-top" id="readMoreBTN" style="width:4.5em; border-radius: 18px;  font-family: 'Papyrus';font-size: 25px; text-shadow: 0 0 20px rgb(255, 230, 0), 0 0 20px rgb(6, 27, 255), 0 0 42px rgb(255, 231, 12), 0 0 82px rgb(255, 0, 0),0 0 92px rgb(6, 255, 19);">Home</button></a>
+  <div class="w3-card-4 w3-margin w3-white" id="corners">
+    <img src="Unity.png" alt="Nature" style="width:40% ; float:right;" id="corners">
+    <div class="w3-container">
+      <h3 ><b>Native Share</b></h3>
+      <span class="w3-opacity">April 7, 2022</span>
+      <h5><a href="https://www.dropbox.com/s/ysfrcjrvyhjuk2o/NativeShare.zip?dl=0" target="_blank"><u>Click here to go to the download page</u></a></h5>
+    </div>
+
+    <div class="w3-container">
+      <p >Hey guys,
+       check the code below and find the link to the Native Share SDK:-
+         <br/>
+         <br/>
+         
+         <span class="w3-tag w3-black w3-margin-bottom" style="text-align: left;">
+          <br/>
+
+          
+
+
+          
+
+          new NativeShare().SetText("Hello world!").Share(); //on click 
+          
+         
+            <br/><br/>
+          </span>
+          
+        </span> 
+        </p>
+
+        
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+</div>
+
+
+
+<div class="w3-row">
+  <div class="w3-col l20 s12 ">
+    
+    
+    <hr>
+  </div>
+ 
+
+  
+
+<div class="w3-col l4">
+  
+  
+<!--   
+  <div class="w3-container w3-margin" >
+    <div class="w3-container w3-padding" style="background-color: rgba(255, 254, 254, 0.466); ">
+      <h4 >Tags </h4>
+    </div>
+    <div class="w3-container w3-white" >
+    <p>
+      <span class="w3-tag w3-black w3-margin-bottom">Sprituality</span>
+      <span class="w3-tag w3-black w3-margin-bottom">Games</span>
+      <span class="w3-tag w3-black w3-margin-bottom">Mathematics</span> 
+      <span class="w3-tag w3-black w3-margin-bottom">Science</span> 
+      <span class="w3-tag w3-black w3-margin-bottom">Astrology</span> 
+      
+      <h5><a href="ArtPage.html" target="_blank"><u>Click here to go to the art page</u></a></h5>
+    </p>
+    </div>
+  </div> -->
+  
+
+</div>
+
+
+</div><br>
+</div>
+<footer class="w3-container w3-dark-grey w3-padding-20 w3-margin-top" style="background-color:#ffffff47 !important ;">
+    <marquee  class="w3-large"  scrollamount="5" style="color:#ffffff !important ;" >If you have any suggestions/queries ,mail me at -nautiyal2108@gmail.com
+     </marquee >
+ 
+</footer>
+<script>
+
+function readMore(clickId) {
+  var dotsList = document.querySelectorAll("#dots");
+  var moreTextList = document.querySelectorAll("#more");
+  var btnTextList = document.querySelectorAll("#readMoreBTN");
+
+  
+      if (dotsList[clickId].style.display === "none") {
+      dotsList[clickId].style.display = "inline";
+      btnTextList[clickId].innerHTML = "Read more"; 
+      moreTextList[clickId].style.display = "none";
+    } else {
+      dotsList[clickId].style.display = "none";
+      btnTextList[clickId].innerHTML = "Read less"; 
+      moreTextList[clickId].style.display = "inline";
+    }
+  
+  
+}
+
+  document.onkeydown = function(e) {
+if(event.keyCode == 123) {
+return false;
+}
+if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+return false;
+}
+if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+return false;
+}
+if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+return false;
+}
+if(e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)){
+return false;
+}
+}
+</script>
+</body>
+</html>
