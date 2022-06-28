@@ -42,8 +42,11 @@
             <!-- Right-sided navbar links -->
             <div class="w3-right w3-hide-small">
                <a href="#blog" class="w3-bar-item w3-button" style="color: white !important"><i class="fa fa-wpforms" ></i> BLOGS</a>
+               <a href="#learn" class="w3-bar-item w3-button" style="color: white !important"><i class="fa fa-book"></i> LEARN</a>
+               <a href="#apps" class="w3-bar-item w3-button" style="color: white !important"><i class="fa fa-gamepad"></i> APPS</a>
                <!-- <a href="#work" class="w3-bar-item w3-button" style="color: white !important"><i class="fa fa-th" ></i> WORK</a> -->
                <a href="#contact" class="w3-bar-item w3-button" style="color: white !important"><i class="fa fa-envelope"></i> CONTACT</a>
+
             </div>
             <!-- Hide right-floated links on small screens and replace them with a menu icon -->
             <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
@@ -53,8 +56,10 @@
       </div>
       <!-- Sidebar on small screens when clicking the menu icon -->
       <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-         <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+         <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">×</a>
          <a href="#blog"  onclick="w3_close()" class="w3-bar-item w3-button">BLOGS</a>
+         <a href="#learn"  onclick="w3_close()" class="w3-bar-item w3-button">LEARN</a>
+         <a href="#apps"  onclick="w3_close()" class="w3-bar-item w3-button">APPS</a>
          <!-- <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a> -->
          <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
       </nav>
@@ -76,9 +81,16 @@
          </div>
       </div>
       
-      <div class="w3-container w3-light-grey" style="padding:1px 50px" id="blog">
-         <hr>
-      <h2 class="w3-center" style="background: rgba(110, 103, 103, 0.416);">BLOGS</h2>
+
+
+
+
+      <!-- Content -->
+
+      <div class="w3-container w3-light-grey" style="padding:1px 50px" id="learn">
+           <br><br>
+      <h2 class="w3-center" style="background: rgba(110, 103, 103, 0.416);">Learning Area</h2>
+      <hr>
       <div class="w3-col l20 s12 corner" >
         <div class="w3-card-4 w3-margin w3-white" id="corners">
            <img src="Unity.png" alt="Nature" style="width:40% ; float:right;" id="corners" class="movePositionImages">
@@ -98,15 +110,14 @@
               </div>
            </div>
         </div>
-        <hr>
+    
      </div>
-     <!-- <div class="w3-card w3-margin w3-margin-top w3-center" >
-        <div class="w3-container w3-white">
-          <p id="corners">Namaste,
-            My name is Shubham Nautiyal and I am a game developer,who loves to explore things,stay tuned for more updates.
-          </p>
-        </div>
-        </div><hr> -->
+   </div> 
+     <div class="w3-container w3-light-grey" style="padding:1px 50px" id="blog">
+      <br><br>
+   
+   <h2 class="w3-center" style="background: rgba(110, 103, 103, 0.416);">Blogs</h2>
+   <hr>
      <div class="w3-col l20 s12 corner" >
         <div class="w3-card-4 w3-margin w3-white" id="corners">
            <img src="background.jpg" alt="Background" style="width:100%" id="corners">
@@ -126,8 +137,13 @@
               </div>
            </div>
         </div>
-        <hr>
+    
      </div>
+   </div>  
+   <div class="w3-container w3-light-grey" style="padding:1px 50px" id="apps">
+      <br><br>
+   <h2 class="w3-center" style="background: rgba(110, 103, 103, 0.416);">Applications</h2>
+     <hr>
      <!-- First vlog -->
      <div class="w3-row">
       <div class="w3-col l20 s12 ">
@@ -156,7 +172,7 @@
             </div>
           </div>
         </div>
-        <hr>
+       
       </div>
      
 
@@ -192,15 +208,23 @@
             </div>
           </div>
         </div>
-        <hr>
+      
       </div>
      
 
-       
    </div>
+   </div>
+      <!-- Content -->
+
+
+
+
+
       <!-- Contact Section -->
       <div class="w3-container w3-light-grey" style="padding:1px 50px" id="contact">
+         <br><br>
          <h2 class="w3-center" style="background: rgba(110, 103, 103, 0.416);">CONTACT</h2>
+         <hr>
          <div style="margin-top:1px">
             <a href="tel:+917302245312" style="text-decoration: none;">
                <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Call</p>
@@ -211,6 +235,7 @@
             <!-- Image of location/map -->
          </div>
       </div>
+   
       <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
       <footer class="w3-center w3-black w3-padding-1">
          <div class="w3-xlarge w3-section ">
