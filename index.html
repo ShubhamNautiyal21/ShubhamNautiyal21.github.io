@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style=" scroll-behavior: smooth;">
    <head>
       <title>Main</title>
       <meta charset="UTF-8">
@@ -31,6 +31,35 @@
    .p{background-color: rgba(0, 0, 0, 0.175);}
    #corners{border-radius: 10px;border-radius: 10px 15px 15px 10px;}
    #more {display: none;}
+   .more {
+			background-image: url("arrow.svg");
+			background-position: center 1.35em;
+			background-repeat: no-repeat;
+			background-size: auto;
+			border: 1px solid #fff;
+			border-radius: 100%;
+			color: rgba(255, 255, 255, 0.75);
+			display: block;
+			height: 4em;
+			text-indent: 4em;
+			overflow: hidden;
+			white-space: nowrap;
+			width: 4em;
+			z-index: 2;
+			margin: 0 auto 2em auto;
+         
+		}
+      
+      .inner {
+			padding: 1.5em;
+			width: 100% !important;
+		}
+   
+      .more:hover {
+				background-color: rgba(255, 255, 255, 0.39);
+				border: 1px solid #fff;
+				color: #FFF;
+			}
    #readMoreBTN{background-color: #393939; border: none;color: white;padding: 1px 3px;text-align: center;text-decoration: none;display: inline-block;font-size: 15px;margin-left: 1.5px;}
    .headingClass{font-size: 0.7em;}
       </style>
@@ -46,6 +75,7 @@
                <a href="#apps" class="w3-bar-item w3-button" style="color: white !important"><i class="fa fa-gamepad"></i> APPS</a>
                <!-- <a href="#work" class="w3-bar-item w3-button" style="color: white !important"><i class="fa fa-th" ></i> WORK</a> -->
                <a href="#contact" class="w3-bar-item w3-button" style="color: white !important"><i class="fa fa-envelope"></i> CONTACT</a>
+               <a href="#about" class="w3-bar-item w3-button" style="color: white !important"><i class="fa fa-user"></i> ABOUT</a>
 
             </div>
             <!-- Hide right-floated links on small screens and replace them with a menu icon -->
@@ -62,21 +92,35 @@
          <a href="#apps"  onclick="w3_close()" class="w3-bar-item w3-button">APPS</a>
          <!-- <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a> -->
          <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+         <a href="#about"  onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
       </nav>
       <!-- Header with full-height image -->
       <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-         <div class="w3-display-left w3-text-white" style="padding:48px">
-            <span class="w3-jumbo ">Every creation has a creator</span><br>
-            <p class="w3-large">Namaste, 
+         <div class="w3-display-left w3-text-white" style=" padding-left:110px">
+           
+           <div id="banner">
+            <span class="w3-jumbo"> Every creation, has a creator !</span><br>
+           </div>
+          
+         
+            <!-- <p class="w3-large">Namaste, 
                My name is Shubham Nautiyal and I am a game developer , I love to explore things,check out our content and stay tuned for more updates.
-            </p>
+            </p> -->
          </div>
+         <div class="w3-display-bottommiddle w3-text-white" style="padding-top:10px ;">
+           
+            <a href="#main"  class="more"></a>
+          
+         </div>
+         
       </header>
 
       <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
          <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
          <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
             <img id="img01" class="w3-image">
+
+           
             <p id="caption" class="w3-opacity w3-large"></p>
          </div>
       </div>
@@ -86,7 +130,7 @@
 
 
       <!-- Content -->
-
+      <div id="main"></div>
       <div class="w3-container w3-light-grey" style="padding:1px 50px" id="learn">
            <br><br>
       <h2 class="w3-center" style="background: rgba(110, 103, 103, 0.416);">Learning Area</h2>
@@ -214,12 +258,11 @@
 
    </div>
    </div>
+     
+
+
+      
       <!-- Content -->
-
-
-
-
-
       <!-- Contact Section -->
       <div class="w3-container w3-light-grey" style="padding:1px 50px" id="contact">
          <br><br>
@@ -236,6 +279,21 @@
          </div>
       </div>
    
+   <!-- About -->
+
+   <div class="w3-container w3-light-grey" style="padding:1px 50px" id="about">
+      
+      <h2 class="w3-center" style="background: rgba(110, 103, 103, 0.416);">ABOUT</h2>
+      <hr>
+      <div >
+         <p style="margin-left: 9%; margin-right: 5%;">
+            Namaste, 
+             My name is Shubham Nautiyal and I am a game developer, I love to explore things, Thanks for checking out the content.
+         </p>
+      </div>
+   </div>
+
+   <!-- About -->
       <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
       <footer class="w3-center w3-black w3-padding-1">
          <div class="w3-xlarge w3-section ">
