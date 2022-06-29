@@ -31,8 +31,11 @@
    .p{background-color: rgba(0, 0, 0, 0.175);}
    #corners{border-radius: 10px;border-radius: 10px 15px 15px 10px;}
    #more {display: none;}
+   .pointer{
+      background-image: url("arrow.svg");
+   }
    .more {
-			background-image: url("arrow.svg");
+         background-image: url("arrow.svg");
 			background-position: center 1.35em;
 			background-repeat: no-repeat;
 			background-size: auto;
@@ -48,45 +51,26 @@
 			z-index: 2;
 			margin: 0 auto 2em auto;
          background-color: rgba(255, 255, 255, 0.21);
-         
+       
 		}
-      .Left{
-			background-image: url("arrow.svg");
-			background-position: center 1.35em;
-			background-repeat: no-repeat;
-			background-size: auto;
-			border: 1px solid #fff;
-			border-radius: 100%;
-			color: rgba(255, 255, 255, 0.75);
-			display: block;
-			height: 4em;
-			text-indent: 4em;
-			overflow: hidden;
-			white-space: nowrap;
-			width: 4em;
-			z-index: 2;
-			margin: 0 auto 2em auto;
-         transform: rotate(90deg);
-		}
-      .Right {
-			background-image: url("arrow.svg");
-			background-position: center 1.35em;
-			background-repeat: no-repeat;
-			background-size: auto;
-			border: 1px solid #fff;
-			border-radius: 100%;
-			color: rgba(255, 255, 255, 0.75);
-			display: block;
-			height: 4em;
-			text-indent: 4em;
-			overflow: hidden;
-			white-space: nowrap;
-			width: 4em;
-			z-index: 2;
-			margin: 0 auto 2em auto;
-         transform: rotate(270deg);
-         
-		}
+      #arrow{
+
+         animation: linear infinite alternate;
+  animation-name: clickHere;
+  animation-duration: 0.9s;
+
+      }
+      @-webkit-keyframes clickHere {
+    0% {
+      top: 0;
+      transform: translateY(0);
+    }
+    100% {
+      bottom: 100%;
+      transform: translateY(-33%);
+    }
+}
+     
       .inner {
 			padding: 1.5em;
 			width: 100% !important;
@@ -156,7 +140,10 @@
          </div>
          <div class="w3-display-bottommiddle w3-text-white" style="padding-top:10px ;">
            
-            <a href="#main"  class="more"></a>
+            <a href="#main"  class="more" id="arrow">
+       
+            </a>
+          
           
          </div>
          
