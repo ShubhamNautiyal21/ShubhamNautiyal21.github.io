@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Joke</title>
+
+    <style>
+        body{
+
+            background-color: rgba(0, 0, 0, 0.583);
+            color: white;
+        }
+
+        .Main{
+            text-align: center;
+            margin-top: 50px;
+          
+        }
+        button{
+            padding: 10px 30px;
+            background-color: rgb(127, 255, 212);
+            font-size:xx-large;
+            transition: 0.3s;
+             
+        }
+        button:hover{
+            padding: 15px 45px;
+            background-color: rgba(127, 255, 212, 0.643);
+        }
+
+
+        #random{
+
+           margin-top: 70px;
+           font-size: larger;
+        }
+    </style>
+</head>
+<body>
+    <div class="Main">
+        <button >Click Here</button>
+        
+    </div>
+  
+    <script>
+          const url = "https://icanhazdadjoke.com/slack";
+        document.querySelector('button').addEventListener('click',  function (){
+            
+
+            if(document.getElementById('random')!=null){
+
+                document.querySelector('.Main').removeChild(document.getElementById('random'));
+            }
+            let para=document.createElement('p');
+            para.id='random';
+            document.querySelector('.Main').appendChild(para);
+            para.innerText= "Wait...";
+            let quote;
+             ReturnRandomQuote().then(data => {
+                quote=data
+                console.log(quote)
+                    })
+                    .catch(error => {
+                        quote=error
+                    })
+                    .finally(()=>{
+                        para.innerText= quote;
+                    })
+                   
+                    console.log(1123);
+          
+        
+        }  );
+
+        
+       let ReturnRandomQuote=async function(){
+      
+         try{
+            let response=await fetch(url);
+         
+            let data=await response.json();
+            console.log(data.attachments[0].fallback)
+            return data.attachments[0].fallback;
+         }
+         catch(e){
+            return "Error while getting data !";
+         }
+       }
+    </script>
+</body>
+</html>
