@@ -157,10 +157,27 @@
         .headingClass {
             font-size: 0.7em;
         }
+        .no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(https://smallenvelop.com/wp-content/uploads/2014/08/Preloader_11.gif) center no-repeat #fff;
+}
     </style>
 </head>
 
 <body oncontextmenu="return false;">
+    <div class="se-pre-con"></div>
+   <script>
+      $(window).load(function () {
+         $(".se-pre-con").fadeOut("slow");;
+      });
+   </script>
     <!-- Navbar (sit on top) -->
     <div class="w3-top">
         <div class="w3-bar w3-white w3-card ColorMain" id="myNavbar">
