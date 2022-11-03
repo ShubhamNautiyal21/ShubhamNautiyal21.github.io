@@ -59,7 +59,10 @@ h1 {
 }
 
 .delete-list:hover {
-    background: url('public/icons/icons8-remove-48\ \(Custom\)\ \(1\)\ -\ Copy.png');
+    backdrop-filter: blur(1px);
+    filter: blur(1px);
+    transition: 0.1s;
+    /* background: url('public/icons/icons8-remove-48\ \(Custom\)\ \(1\)\ -\ Copy.png'); */
 }
 
 .add-heading {
@@ -91,8 +94,10 @@ h1 {
 
 .add-heading:hover,
 .add-content:hover {
-
-    background: url('public/icons/icons8-add-new-48\ \(Custom\)\ \(1\)\ -\ Copy.png');
+    backdrop-filter: blur(1px);
+    filter: blur(1px);
+    transition: 0.1s;
+    /* background: url('public/icons/icons8-add-new-48\ \(Custom\)\ \(1\)\ -\ Copy.png'); */
 }
 
 #add-new-link {
