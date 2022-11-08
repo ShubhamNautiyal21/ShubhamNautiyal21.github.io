@@ -94,10 +94,12 @@ h1 {
 
 .add-heading:hover,
 .add-content:hover {
-    backdrop-filter: blur(1px);
+   
+    /*
+     backdrop-filter: blur(1px);
     filter: blur(1px);
     transition: 0.1s;
-    /* background: url('public/icons/icons8-add-new-48\ \(Custom\)\ \(1\)\ -\ Copy.png'); */
+    background: url('public/icons/icons8-add-new-48\ \(Custom\)\ \(1\)\ -\ Copy.png'); */
 }
 
 #add-new-link {
