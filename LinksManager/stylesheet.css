@@ -227,9 +227,18 @@ a:visited {
 .heading {
 
     align-self: flex-start;
-
     margin-bottom: 20px;
 
 
 
+}
+.heading {
+    border: 1.5px solid black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    padding-left: 30px;
+    width: calc(95%);
+    background-color: rgba(0, 0, 0, 0.15);
 }
