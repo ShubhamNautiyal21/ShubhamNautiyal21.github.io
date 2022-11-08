@@ -242,3 +242,15 @@ a:visited {
     width: calc(95%);
     background-color: rgba(0, 0, 0, 0.12);
 }
+
+.delete-list:hover {
+    cursor: pointer;
+}
+
+.add-content:hover {
+    cursor: cell;
+}
+
+.add-heading:hover {
+    cursor: cell;
+}
