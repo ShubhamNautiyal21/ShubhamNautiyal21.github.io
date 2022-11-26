@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday</title>
+    <!-- Google Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="stylesheet.css" />
+    <script src="index.js" defer></script>
+
+</head>
+
+<body onload='loadAudio'>
+    <audio controls autoplay loop>
+        <source src="./sounds/happy-birthday-to-you-piano-version-13976.mp3" type="audio/ogg">
+    </audio>
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+
+            <img src="./images/dac01c30553c4def270d0f4c059dfae3.jpg" style="width:100%">
+
+        </div>
+
+        <div class="mySlides fade">
+
+            <img src="./images/f09a4262fb9792b1203f31255c038228.jpg" style="width:100%">
+
+        </div>
+
+        <div class="mySlides fade">
+
+            <img src="./images/8bc0edcc3174a7fb06c0c7dbabf17bdb.jpg" style="width:100%">
+
+        </div>
+        <div class="mySlides fade">
+
+            <img src="./images/Happy Birthda 1.png" style="width:100%">
+
+        </div>
+
+
+    </div>
+    <canvas id="birthday">
+
+
+    </canvas>
+    <div class="birthdayCard">
+
+        <div class="cardFront">
+            <div class="front-text">
+                <h3 class="happy">happy</h3>
+                <h3 class="bday">birthday,</h3>
+                <h3 class="toyou">bhapu</h3>
+            </div>
+            <div class="wrap-deco">
+                <div class="decorations"></div>
+                <div class="decorationsTwo"></div>
+            </div>
+            <div class="wrap-decoTwo">
+                <div class="decorations"></div>
+                <div class="decorationsThree"></div>
+            </div>
+            <div class="plate">
+                <div class="cake"></div>
+                <div class="flame"></div>
+            </div>
+        </div>
+        <div class="cardInside">
+            <div class="inside-text">
+                <br>
+                <br>
+                <h3 class="bday">Happy Birthday</h3>
+                <h3 class="toyou"></h3>
+            </div>
+            <div class="inner-text-items">
+                <br>
+                <p>Sichmu,</p>
+                <p>hippu birthdu, bhapu,
+                    tim to bhudi ho gyi hui,
+                    partu kri tum, purple jacket phni, nachi or khani kahi,
+                    caku khao or baccho k sath birthday mnao,
+                    thanks, okay, welcome, acha, no problem, oh yeah.
+                </p>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+
+            slides[slideIndex - 1].style.display = "block";
+
+            setTimeout(showSlides, 5000); // Change image every 2 seconds
+        }
+    </script>
+</body>
+
+</html>
