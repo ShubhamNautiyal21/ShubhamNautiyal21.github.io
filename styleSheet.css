@@ -1,1 +1,183 @@
-1
+
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Raleway", sans-serif
+        }
+
+        body,
+        html {
+            height: 100%;
+            line-height: 1.8;
+        }
+
+        .bgimg-1 {
+            background-position: center;
+            background-size: cover;
+            background-image: url("mainBg.jpg");
+            min-height: 100%;
+        }
+
+        .w3-bar .w3-button {
+            padding: 16px;
+        }
+
+        hr {
+            border: 0.5px solid rgba(0, 0, 0, 0.1);
+            border-radius: 1px;
+        }
+
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: "Papyrus", sans-serif
+        }
+
+        p {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        a {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .p {
+            background-color: rgba(0, 0, 0, 0.175);
+        }
+
+        #corners {
+            border-radius: 10px;
+            border-radius: 10px 15px 15px 10px;
+        }
+
+        #more {
+            display: none;
+        }
+
+        .pointer {
+
+            background-image: url("arrow.svg");
+        }
+
+        .more {
+            background-image: url("arrow.svg");
+            background-position: center 1.35em;
+            background-repeat: no-repeat;
+            background-size: auto;
+            border: 1px solid #fff;
+            border-radius: 100%;
+            color: rgba(255, 255, 255, 0.75);
+            display: block;
+            height: 4em;
+            text-indent: 4em;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 4em;
+            z-index: 2;
+            margin: 0 auto 2em auto;
+            background-color: rgba(255, 255, 255, 0.21);
+
+        }
+
+        #arrow {
+
+            animation: linear infinite alternate;
+            animation-name: clickHere;
+            animation-duration: 0.9s;
+
+        }
+
+      
+
+        @-webkit-keyframes clickHere {
+            0% {
+                top: 0;
+                transform: translateY(60px);
+            }
+
+            100% {
+                bottom: 100%;
+                transform: translateY(50%);
+            }
+        }
+
+        .inner {
+            padding: 1.5em;
+            width: 100% !important;
+        }
+
+        .more:hover {
+            background-color: rgba(255, 255, 255, 0.39);
+            border: 1px solid #fff;
+            color: #FFF;
+        }
+
+        .Color {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.84);
+        }
+
+        .ColorMain {
+            color: white;
+            background-image: linear-gradient(to right, rgba(0, 0, 255, 0.77), rgba(128, 0, 128, 0.77)) !important;
+        }
+
+        #readMoreBTN {
+            background-color: #393939;
+            border: none;
+            color: white;
+            padding: 1px 3px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            margin-left: 1.5px;
+        }
+
+        .headingClass {
+            font-size: 0.7em;
+        }
+
+        .no-js #loader {
+            display: none;
+        }
+
+        .js #loader {
+            display: block;
+            position: absolute;
+            left: 100px;
+            top: 0;
+        }
+
+        .se-pre-con {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url(https://media.giphy.com/media/3AMRa6DRUhMli/giphy.gif) center no-repeat rgb(0, 0, 0);
+        }
+         @media(width>600px) {
+             .mquery {
+               
+                width: 50% !important;
+                display: block;
+                margin-inline: auto;
+                padding-top: 7px;
+            }
+
+            .mquery1 {
+                width: 30% !important;
+                display: block;
+                margin-inline: auto;
+            }
+        }
+    
