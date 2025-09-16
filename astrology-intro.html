@@ -1,330 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<title>Astrology — The Language of the Cosmos</title>
-		<meta
-			name="description"
-			content="Basics of Vedic Astrology, Nelson's planetary propagation theory, comparison and visuals." />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Astrology: The Language of the Cosmos</title>
 		<style>
-			:root {
-				--bg: #0f1724;
-				--card: #0b1220;
-				--accent: #f59e0b;
-				--muted: #9aa6b2;
-				--glass: rgba(255, 255, 255, 0.03);
-				--maxw: 900px;
-				--radius: 12px;
-				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-			}
-			* {
-				box-sizing: border-box;
-				margin: 0;
-				padding: 0;
-			}
-			html,
 			body {
-				height: 100%;
-				background: linear-gradient(180deg, #061025 0%, #061728 60%);
-				color: #e6eef6;
-				line-height: 1.5;
-			}
-			.wrap {
-				max-width: var(--maxw);
-				margin: 30px auto;
-				padding: 20px;
+				font-family: Arial, sans-serif;
+				margin: 0;
+				line-height: 1.6;
+				background: #fdfcf9;
+				color: #333;
 			}
 			header {
+				background: #1a1a1a;
+				color: #fff;
+				padding: 2rem;
 				text-align: center;
-				margin-bottom: 30px;
 			}
-			h1 {
-				font-size: 2.2rem;
-				margin-bottom: 10px;
-				color: var(--accent);
-			}
-			p.lead {
-				font-size: 1.1rem;
-				color: var(--muted);
-			}
-			nav {
-				display: flex;
-				justify-content: center;
-				gap: 12px;
-				margin-bottom: 30px;
-				flex-wrap: wrap;
-			}
-			a.btn {
-				background: var(--glass);
-				padding: 8px 14px;
-				border-radius: 10px;
-				color: var(--muted);
-				text-decoration: none;
-				font-size: 0.95rem;
-				border: 1px solid rgba(255, 255, 255, 0.05);
-			}
-			a.btn:hover {
-				color: var(--accent);
-				border-color: rgba(245, 158, 11, 0.3);
-			}
-			section.card {
-				background: var(--card);
-				padding: 20px;
-				border-radius: var(--radius);
-				margin-bottom: 30px;
-				box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
-			}
-			.visual {
-				width: 100%;
-				height: 250px;
-				border-radius: var(--radius);
-				overflow: hidden;
-				margin-bottom: 15px;
-			}
-			.visual img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				display: block;
-			}
+			h1,
 			h2 {
-				margin-bottom: 15px;
-				color: var(--accent);
+				margin-top: 1.5rem;
 			}
-			ul.clean {
-				list-style: none;
+			.container {
+				max-width: 900px;
+				margin: auto;
+				padding: 1.5rem;
 			}
-			ul.clean li {
-				padding: 10px 0;
-				border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+			img {
+				max-width: 100%;
+				border-radius: 8px;
+				margin: 1rem 0;
 			}
-			table.compare {
-				width: 100%;
-				border-collapse: collapse;
-				margin-top: 15px;
-			}
-			table.compare th,
-			table.compare td {
-				padding: 10px;
-				border: 1px solid rgba(255, 255, 255, 0.1);
-				text-align: left;
-			}
-			table.compare th {
-				background: rgba(245, 158, 11, 0.2);
-				color: #061129;
-			}
-			.resources {
-				margin-top: 10px;
-			}
-			.resources a {
-				color: var(--accent);
-				text-decoration: none;
-			}
-			.resources a:hover {
-				text-decoration: underline;
+			a {
+				color: #0066cc;
 			}
 			footer {
 				text-align: center;
-				color: var(--muted);
-				font-size: 0.9rem;
-				margin-top: 40px;
+				padding: 1rem;
+				background: #eee;
+				margin-top: 2rem;
+			}
+			table {
+				border-collapse: collapse;
+				width: 100%;
+				margin: 1rem 0;
+			}
+			th,
+			td {
+				border: 1px solid #ccc;
+				padding: 0.5rem;
+				text-align: left;
+			}
+			th {
+				background: #f0f0f0;
 			}
 		</style>
 	</head>
 	<body>
-		<div class="wrap">
-			<header>
-				<h1>Astrology: The Language of the Cosmos</h1>
-				<p class="lead">
-					An introduction to Vedic astrology, and how ancient pattern-reading
-					connects with Nelson’s planetary propagation research.
-				</p>
-			</header>
+		<header>
+			<h1>Astrology: The Language of the Cosmos</h1>
+			<p>
+				John H. Nelson's Planetary Propagation Theory & the World of Vedic
+				Astrology
+			</p>
+		</header>
 
-			<nav>
-				<a class="btn" href="#basics">Basics</a>
-				<a class="btn" href="#nelson">Nelson’s Theory</a>
-				<a class="btn" href="#comparison">Comparison</a>
-				<a class="btn" href="#visuals">Visuals & Resources</a>
-			</nav>
+		<div class="container">
+			<h2>John H. Nelson’s Planetary Propagation Theory</h2>
+			<p>
+				John H. Nelson’s work is a fascinating blend of astronomy, radio
+				science, and planetary theory. He wasn’t researching planets in the
+				traditional astrophysical sense—like studying their geology or
+				atmospheres—but rather exploring how planetary alignments might
+				influence solar activity and, in turn, radio wave propagation on Earth.
+			</p>
+			<h3>Nelson’s Key Findings</h3>
+			<ul>
+				<li>
+					In the early 1950s, while working as an engineer for RCA
+					Communications, Nelson developed a theory that planetary positions
+					relative to the Sun could be used to predict shortwave radio
+					propagation conditions.
+				</li>
+				<li>
+					He observed that certain heliocentric angles between
+					planets—especially 0°, 90°, 180°, and 270°—correlated with degraded
+					radio propagation.
+				</li>
+				<li>
+					Angles like 60° and 120°, particularly between Jupiter and Saturn,
+					were associated with stable propagation.
+				</li>
+				<li>
+					His predictions were reportedly about 85% accurate based on data from
+					1950–1951.
+				</li>
+			</ul>
+			<h3>Why RCA Was Interested</h3>
+			<p>
+				RCA relied heavily on shortwave radio for global communications.
+				Magnetic storms—often triggered by solar activity—could disrupt these
+				signals. Nelson’s goal was to create a forecasting system for magnetic
+				storms using planetary configurations as indicators.
+			</p>
+			<h3>Legacy and Controversy</h3>
+			<p>
+				His work was republished in Infinite Energy magazine in 2000, sparking
+				renewed interest among amateur radio enthusiasts and alternative science
+				communities. Despite its intriguing correlations, Nelson’s theory hasn’t
+				gained mainstream scientific acceptance. It’s often viewed as
+				speculative, though some researchers still find it worth exploring.
+			</p>
+			<p>
+				You can read Nelson’s original findings in the Sacred Science
+				Institute’s reprint here:
+				<a
+					href="https://www.sacredscienceinstitute.com/EZ/ssi/ssi/SamplePages/sb_218_nelson_cosmic-patterns.pdf"
+					target="_blank"
+					>Official PDF of Nelson’s Cosmic Patterns</a
+				>.
+			</p>
+			<img
+				src="https://images.unsplash.com/photos/a-zodiac-sign-and-some-astro-symbols-on-a-purple-background-HagcTfEFxP0?auto=format&fit=crop&w=900&q=60"
+				alt="Zodiac sign & astro symbols on purple background" />
 
-			<section class="card" id="basics">
-				<h2>Basics of Vedic Astrology</h2>
-				<div class="visual">
-					<img
-						src="https://www.freepik.com/premium-ai-image/high-quality-digital-image-wallpaper_162695348.htm#fromView=keyword&page=1&position=23&uuid=24b34a02-17e9-4701-aa94-0d4ca6a295ae&query=Vedic+astrology"
-						alt="Stars and zodiac" />
-				</div>
-				<ul class="clean">
-					<li>
-						<strong>Grahas (Planets):</strong> Sun (Self, Soul), Moon (Mind,
-						Emotions), Mars (Energy, Courage), Mercury (Communication,
-						Intellect), Jupiter (Wisdom, Expansion), Venus (Love, Beauty),
-						Saturn (Discipline, Karma), plus Rahu & Ketu (lunar nodes)
-						representing karmic paths and transformation.
-					</li>
-					<li>
-						<strong>Rashis (Zodiac Signs):</strong> 12 signs—Aries, Taurus,
-						Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn,
-						Aquarius, Pisces. Each modifies how planet’s energy expresses
-						itself.
-					</li>
-					<li>
-						<strong>Bhavas (Houses):</strong> 12 sectors of life: self-identity,
-						wealth, communication, home, creativity, service, partnerships,
-						transformation, travel, career, gains, losses. Planets in houses
-						show where life themes manifest.
-					</li>
-					<li>
-						<strong>Nakshatras (Lunar Mansions):</strong> The Moon’s path
-						divided into 27 segments—each with mythological, psychological, and
-						timing significance.
-					</li>
-					<li>
-						<strong>Dashas & Transits:</strong> Dashas are long-term planetary
-						periods that govern major life phases; transits are current
-						movements of planets affecting daily life and triggering events.
-					</li>
-				</ul>
-			</section>
+			<h2>Astrology: The Cosmic Language</h2>
+			<p>
+				Astrology interprets planetary movements as symbolic messages connecting
+				the macrocosm (universe) with the microcosm (human life). It offers a
+				framework for understanding personality, life patterns, and cosmic
+				timing.
+			</p>
+			<ul>
+				<li>
+					<strong>Planets:</strong> Sun, Moon, Mercury, Venus, Mars, Jupiter,
+					Saturn, plus outer planets for modern charts.
+				</li>
+				<li>
+					<strong>Houses:</strong> Twelve divisions of the sky representing life
+					areas such as career, relationships, and health.
+				</li>
+				<li>
+					<strong>Zodiac Signs:</strong> Aries through Pisces, marking the Sun’s
+					yearly path.
+				</li>
+			</ul>
+			<img
+				src="https://images.unsplash.com/photo-1603484477865-9b79e6c3ed98?auto=format&fit=crop&w=900&q=60"
+				alt="Zodiac signs illustration" />
 
-			<section class="card" id="nelson">
-				<h2>John H. Nelson’s Planetary Propagation Theory</h2>
-				<div class="visual">
-					<img
-						src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=80"
-						alt="Planetary orbits" />
-				</div>
-				<p>
-					John H. Nelson was an engineer in the 1950s who proposed that
-					**planetary alignments**—specifically certain heliocentric angles
-					between planets—correlate with solar activity (sunspots, magnetic
-					storms) which then influence radio wave propagation on Earth. Although
-					the idea is not part of mainstream science, it's intriguing as a
-					pattern-based theory.
-				</p>
-				<ul class="clean">
-					<li>
-						<strong>Key angles:</strong> Conjunction (0°), Opposition (180°),
-						Quadrature (90°/270°) associated by Nelson with times of disrupted
-						radio signals.
-					</li>
-					<li>
-						<strong>Harmonic aspects:</strong> Sextiles (60°) and Trines (120°),
-						especially between massive planets like Jupiter & Saturn, claimed to
-						be associated with more stable propagation.
-					</li>
-					<li>
-						<strong>Empirical claims:</strong> Nelson claimed ~80-90% accuracy
-						in data sets from 1950-51 for certain conditions. Critics point out
-						lack of modern statistical controls, unknown data biases, and no
-						established physical mechanism widely accepted.
-					</li>
-					<li>
-						<strong>Relevance:</strong> Even if not scientifically proven, it
-						shares with astrology the idea that planetary geometry and timing
-						matter; useful for illustrating how pattern recognition shows up in
-						different domains.
-					</li>
-				</ul>
-				<p>
-					If you have a PDF link to Nelson’s original paper, you can share it
-					with the audience for deeper reading.
-				</p>
-			</section>
+			<h2>The 12 Houses of Astrology: Meaning & Energy</h2>
+			<p>
+				Each house represents a distinct domain of life and holds specific
+				energetic themes. Below is a detailed overview including rulers,
+				exaltation and debilitation placements:
+			</p>
+			<table>
+				<tr>
+					<th>House</th>
+					<th>Domain of Life</th>
+					<th>Energetic Themes</th>
+					<th>Ruler & Key Points</th>
+					<th>Exaltation / Debilitation</th>
+				</tr>
+				<tr>
+					<td>1st</td>
+					<td>Self & Identity</td>
+					<td>Vitality, personality, physical body</td>
+					<td>Aries / Mars; shows overall life direction</td>
+					<td>Sun exalted (Aries) / Saturn debilitated</td>
+				</tr>
+				<tr>
+					<td>2nd</td>
+					<td>Finances & Values</td>
+					<td>Wealth, possessions, self-worth</td>
+					<td>Taurus / Venus; speech & family assets</td>
+					<td>Moon exalted (Taurus) / Mercury debilitated (Pisces)</td>
+				</tr>
+				<tr>
+					<td>3rd</td>
+					<td>Communication</td>
+					<td>Siblings, intellect, short travel</td>
+					<td>Gemini / Mercury; courage, skills</td>
+					<td>—</td>
+				</tr>
+				<tr>
+					<td>4th</td>
+					<td>Home & Roots</td>
+					<td>Family, emotional foundation, ancestry</td>
+					<td>Cancer / Moon; real estate & mother</td>
+					<td>Jupiter exalted (Cancer) / Mars debilitated (Cancer)</td>
+				</tr>
+				<tr>
+					<td>5th</td>
+					<td>Creativity & Romance</td>
+					<td>Pleasure, children, artistic expression</td>
+					<td>Leo / Sun; intelligence, mantra power</td>
+					<td>—</td>
+				</tr>
+				<tr>
+					<td>6th</td>
+					<td>Health & Service</td>
+					<td>Routine, wellness, work ethic</td>
+					<td>Virgo / Mercury; enemies, daily duties</td>
+					<td>Mercury exalted (Virgo) / Venus debilitated (Virgo)</td>
+				</tr>
+				<tr>
+					<td>7th</td>
+					<td>Partnerships</td>
+					<td>Marriage, contracts, one-on-one dynamics</td>
+					<td>Libra / Venus; legal ties & spouse</td>
+					<td>Saturn exalted (Libra) / Sun debilitated (Libra)</td>
+				</tr>
+				<tr>
+					<td>8th</td>
+					<td>Transformation</td>
+					<td>Death, rebirth, shared resources</td>
+					<td>Scorpio / Mars; occult, sudden change</td>
+					<td>Moon debilitated (Scorpio)</td>
+				</tr>
+				<tr>
+					<td>9th</td>
+					<td>Philosophy & Travel</td>
+					<td>Higher learning, beliefs, long journeys</td>
+					<td>Sagittarius / Jupiter; dharma & fortune</td>
+					<td>—</td>
+				</tr>
+				<tr>
+					<td>10th</td>
+					<td>Career & Status</td>
+					<td>Ambition, reputation, public life</td>
+					<td>Capricorn / Saturn; achievements, father</td>
+					<td>Mars exalted (Capricorn) / Jupiter debilitated (Capricorn)</td>
+				</tr>
+				<tr>
+					<td>11th</td>
+					<td>Community & Aspirations</td>
+					<td>Friends, networks, future goals</td>
+					<td>Aquarius / Saturn; gains & hopes</td>
+					<td>—</td>
+				</tr>
+				<tr>
+					<td>12th</td>
+					<td>Subconscious & Mysticism</td>
+					<td>Isolation, dreams, spiritual karma</td>
+					<td>Pisces / Jupiter; moksha, charity</td>
+					<td>Venus exalted (Pisces) / Mercury debilitated (Pisces)</td>
+				</tr>
+			</table>
 
-			<section class="card" id="comparison">
-				<h2>Comparing Vedic Astrology & Nelson’s Theory</h2>
-				<table class="compare">
-					<tr>
-						<th>Feature</th>
-						<th>Vedic Astrology</th>
-						<th>Nelson’s Planetary Propagation</th>
-					</tr>
-					<tr>
-						<td>Purpose</td>
-						<td>Interpret life’s patterns, guidance, self-understanding</td>
-						<td>Predict conditions of solar activity and radio propagation</td>
-					</tr>
-					<tr>
-						<td>Focus</td>
-						<td>
-							Human experience, karma, timing, psychological & spiritual growth
-						</td>
-						<td>Solar storms, geomagnetic effects, radio communication</td>
-					</tr>
-					<tr>
-						<td>Method</td>
-						<td>Birth charts, dashas, transits, symbolism</td>
-						<td>
-							Heliocentric angles, empirical correlation (historical data)
-						</td>
-					</tr>
-					<tr>
-						<td>Basis</td>
-						<td>Ancient tradition, philosophy, symbolism</td>
-						<td>
-							Engineered measurements, speculation, less accepted by mainstream
-							science
-						</td>
-					</tr>
-					<tr>
-						<td>Common ground</td>
-						<td>Emphasis on planetary positions, geometry, timing</td>
-						<td>Same — geometry, alignment, timing of events</td>
-					</tr>
-				</table>
-			</section>
-
-			<section class="card" id="visuals">
-				<h2>Visuals & Resources</h2>
-				<div class="visual">
-					<img
-						src="https://images.unsplash.com/photo-1569025691779-7cfa4a79ffb8?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=80"
-						alt="Constellations and night sky" />
-				</div>
-				<p>
-					Here are some useful links to explore or include if you need further
-					reading or visuals in your presentation:
-				</p>
-				<ul class="clean">
-					<li>
-						<a
-							href="https://en.wikipedia.org/wiki/Vedic_astrology"
-							target="_blank"
-							>Wikipedia: Vedic Astrology</a
-						>
-					</li>
-					<li>
-						<a href="https://en.wikipedia.org/wiki/Nakshatra" target="_blank"
-							>Wikipedia: Nakshatra (Lunar Mansions)</a
-						>
-					</li>
-					<li>
-						<a href="https://en.wikipedia.org/wiki/Solar_storm" target="_blank"
-							>Solar Storms — Relevance to Radio Propagation</a
-						>
-					</li>
-					<li>
-						<a href="https://unsplash.com/s/photos/astrology" target="_blank"
-							>Unsplash: Astrology Photos</a
-						>
-					</li>
-					<li>
-						<a href="https://www.nasa.gov/solar-system/sun" target="_blank"
-							>NASA: The Sun (Solar Physics)</a
-						>
-					</li>
-				</ul>
-			</section>
-
-			<footer>
-				<p>
-					Created by Shubham. Feel free to modify or add your own examples and
-					images. Best wishes for your talk!
-				</p>
-			</footer>
+			<h2>Linking Nelson's Degrees to Astrology</h2>
+			<p>
+				Nelson focused on planetary angles of 0°, 60°, 90°, 120°, 180°, and
+				270°. In astrology, these are key aspects:
+			</p>
+			<ul>
+				<li>
+					<strong>0° (Conjunction):</strong> Planets merge energies—can
+					intensify influence.
+				</li>
+				<li>
+					<strong>60° (Sextile):</strong> Harmonious opportunity and easy flow.
+				</li>
+				<li>
+					<strong>90° (Square):</strong> Tension, challenge, dynamic growth.
+				</li>
+				<li>
+					<strong>120° (Trine):</strong> Natural talent, effortless support.
+				</li>
+				<li>
+					<strong>180° (Opposition):</strong> Balance or conflict between
+					polarities.
+				</li>
+				<li>
+					<strong>270°:</strong> A waning square, signaling internal adjustment.
+				</li>
+			</ul>
+			<p>
+				These same angular relationships that Nelson linked to radio
+				disturbances mirror astrological interpretations of planetary aspects,
+				highlighting an intriguing bridge between empirical observation and
+				ancient cosmic language.
+			</p>
 		</div>
+
+		<footer>&copy; 2025 – Educational overview for discussion purposes.</footer>
 	</body>
 </html>
