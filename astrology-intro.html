@@ -11,8 +11,16 @@
 				font-family: Arial, sans-serif;
 				line-height: 1.6;
 				color: #f0f0f0; /* light text */
-				background: url("bg.png") no-repeat center center / cover;
-				background-attachment: fixed;
+				background: url("bg.png") no-repeat center center;
+				background-size: cover;        /* scales image to fill screen */
+				background-attachment: fixed;  /* parallax on desktop */
+			}
+
+			/* Prevent background issues on small/mobile screens */
+			@media (max-width: 768px) {
+				body {
+					background-attachment: scroll;
+				}
 			}
 
 			header {
