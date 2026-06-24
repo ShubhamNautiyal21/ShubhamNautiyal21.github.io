@@ -384,13 +384,6 @@ buildReading(selected[0],selected[1],selected[2]);
 let score=getCardValue(selected[1])+getCardValue(selected[2]);
 
 let result;
-if(score===2) result="Absolutely go for it";
-else if(score===1) result="Yes";
-else if(score===-1) result="No";
-else result="Absolutely no";
-
-document.getElementById("yesno").innerHTML=
-`<h2>Answer</h2><p>${result}</p>`;
 }
 
 </script>
