@@ -161,7 +161,7 @@ button:hover {
 
 <h1>🔮 Tarot Reading</h1>
 
-<button id="drawBtn" onclick="draw()">Draw 3 Cards</button>
+
 
 <div class="cards" id="cards"></div>
 
@@ -172,11 +172,18 @@ button:hover {
 
 <script>
 
+document.addEventListener("keydown", function(e){
+  if(e.key === "Enter"){
+    start();
+  }
+});
 function start(){
   document.getElementById("intro").style.display="none";
   document.getElementById("main").style.display="block";
   createMist();
+  draw(); 
 }
+
 
 function createMist(){
   const bg = document.getElementById("mystic-bg");
@@ -360,7 +367,7 @@ return `
 
 function draw(){
 
-document.getElementById("drawBtn").style.display="none";
+
 
 let selected=[];
 while(selected.length<3){
