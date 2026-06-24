@@ -1,436 +1,291 @@
 <!DOCTYPE html>
-<html style=" scroll-behavior: smooth;">
-
+<html lang="en">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9166927686043215"
-        crossorigin="anonymous"></script>
-    <title>Shubham Nautiyal | Unity3D | Node.js</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:image" content="background.jpg">
-    <meta name="keywords"
-        content="Shubham Nautiyal, Shubham, Nautiyal, Unity, Unity3D, Unity3d, unity3d, unity3D, Products, Get started with Unity, PRODUCTS, Unity for beginners, Unity tutorials, Simluation, World, Universe, Spirituality, Games, Application, Game, Applications, Drawing, Drawing Apps, Drawing Applications, Unity, Dehradun,India" />
-    <meta name = "description" content = " Namaste,
-                My name is Shubham Nautiyal and I am a Software Engineer, I love to explore things, Click on the link to check out
-                the content." />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <meta property = "og:description" content = "My name is Shubham Nautiyal and I am a Software Engineer, I love to explore things, Click on the link to check out
-                the content." />
-    <meta property = "og:title" content = "Namaste, to the World." />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" href="radar-tracking-icon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="styleSheet.css">
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+<meta charset="UTF-8">
+<title>✨ Tarot Reading ✨</title>
+
+<style>
+body {
+  font-family: 'Georgia', serif;
+  background: black;
+  color: white;
+  margin: 0;
+  padding: 20px;
+  overflow-x: hidden;
+  text-align:center;
+}
+
+/* stars */
+body::before {
+  content: "";
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(white 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.08;
+  animation: moveStars 60s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes moveStars {
+  from { transform: translate(0,0); }
+  to { transform: translate(-500px, -500px); }
+}
+
+/* mist */
+#mystic-bg {
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:0;
+}
+
+.mist {
+  position:absolute;
+  width:200px;
+  height:200px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 70%);
+  border-radius:50%;
+  animation: floatMist linear infinite;
+}
+
+@keyframes floatMist {
+  from { transform: translateY(100vh); opacity:0; }
+  50% { opacity:0.2; }
+  to { transform: translateY(-20vh); opacity:0; }
+}
+
+/* glow title */
+h1 {
+  animation: glow 3s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  from { text-shadow: 0 0 5px white; }
+  to { text-shadow: 0 0 20px white; }
+}
+
+/* intro */
+#intro {
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:black;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  z-index:10;
+}
+
+#intro p {
+  max-width:500px;
+  opacity:0.7;
+  margin:20px;
+}
+
+/* buttons */
+button {
+  background:black;
+  color:white;
+  border:1px solid white;
+  padding:12px 30px;
+  border-radius:30px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover {
+  background:white;
+  color:black;
+  box-shadow:0 0 15px white;
+}
+
+/* layout */
+.main { display:none; position:relative; z-index:1; }
+
+.cards {
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.card {
+  border:1px solid white;
+  padding:15px;
+  width:200px;
+  border-radius:20px;
+  background: rgba(255,255,255,0.03);
+
+  opacity:0;
+  transform: translateY(20px);
+  animation: fadeIn 1s forwards;
+}
+
+.card:nth-child(2){ animation-delay:0.2s; }
+.card:nth-child(3){ animation-delay:0.4s; }
+
+@keyframes fadeIn {
+  to { opacity:1; transform:translateY(0); }
+}
+
+.section {
+  background:rgba(255,255,255,0.05);
+  padding:20px;
+  margin:20px auto;
+  max-width:800px;
+  border-radius:20px;
+}
+
+</style>
 </head>
 
-<body oncontextmenu="return false;">
-    <div class="se-pre-con"></div>
-    <script>
-        $(window).load(function () {
-            $(".se-pre-con").fadeOut("slow");;
-        });
-    </script>
-
-    <div class="w3-top">
-        <div class="w3-bar w3-white w3-card ColorMain" id="myNavbar">
-
-            <div class="w3-right w3-hide-small">
-
-
-                <a href="#blog" class="w3-bar-item w3-button" style="color: white !important"><i
-                        class="fa fa-wpforms"></i> BLOGS</a>
-                <a href="#products" class="w3-bar-item w3-button" style="color: white !important"><i
-                        class="fa fa-product-hunt"></i> PRODUCTS</a>
-                
-                <a href="#about" class="w3-bar-item w3-button" style="color: white !important"><i
-                        class="fa fa-user"></i> ABOUT</a>
-
-            </div>
-            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
-                onclick="w3_open()">
-                <i class="fa fa-bars"></i>
-            </a>
-        </div>
-    </div>
-
-    <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large"
-        style="display:none" id="mySidebar">
-        <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">×</a>
-
-
-        <a href="#blog" onclick="w3_close()" class="w3-bar-item w3-button">BLOGS</a>
-        <a href="#products" onclick="w3_close()" class="w3-bar-item w3-button">PRODUCTS</a>
-
-     
-        <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
-    </nav>
-
-    <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-        <div class="w3-display-left w3-text-white" style=" padding-left:100px">
-
-            <div id="banner">
-                <span class="w3-jumbo"> Every creation, has a creator !</span><br>
-
-            </div>
-
-        </div>
-        <div class="w3-display-bottommiddle w3-text-white" style="padding-bottom: 40px  !important ;">
-
-            <a href="#main" class="more" id="arrow">
-            </a>
-        </div>
-
-    </header>
-
-    <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-        <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright"
-            title="Close Modal Image">×</span>
-        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-            <img id="img01" class="w3-image">
-            <p id="caption" class="w3-opacity w3-large"></p>
-        </div>
-    </div>
-
-    <div id="main"></div>
-
-    <div class="w3-container w3-light-grey" style="padding:1px 50px" id="blog">
-        <br><br>
-
-        <h2 class="w3-center w3-black">BLOGS</h2>
-        <hr>
-        <div class="w3-col l20 s12 corner">
-            <div class="w3-card-4 w3-margin w3-white" id="corners">
-                <img src="background.jpg" loading="lazy" alt="Background" class="mquery" style="width:100%" id="corners">
-                <div class="w3-container">
-                    <h3><b>Spirituality is doing things passionately</b></h3>
-                </div>
-                <div class="w3-container">
-                    <p>
-                        People often misconstrue spirituality as religion, a sense of knowledge is spirituality,
-                        rendering your<span id="dots">...</span><span id="more">
-                        </span> <a href="Sprituality is doing things passionately"><button onclick="readMore(9)"
-                                class="w3-tag w3-black w3-margin-bottom" id="readMoreBTN">Read more</button></a>
-                    </p>
-                    <div class="w3-row">
-                        <div class="w3-col m8 s12">
-                        </div>
-                        <div class="w3-col m4 w3-hide-small">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <div class="w3-container w3-light-grey" style="padding:1px 50px" id="products">
-        <br><br>
-        <h2 class="w3-center w3-black">PRODUCTS</h2>
-        <hr>
-          <div class="w3-row">
-            <div class="w3-col l20 s12 ">
+<body>
 
-                <div class="w3-card-4 w3-margin w3-white" id="corners">
-                    <img src="Capture1.png" loading="lazy" alt="AR Unity Application" class="mquery mquery1" style="width:100%" id="corners">
-                    <div class="w3-container">
-                        <h3><b>AR FaceApp</b></h3>
-                        <h5><a href="https://www.dropbox.com/s/5tkxz3ciciyzs7o/AR%20FaceApp.apk?dl=0"
-                                target="_blank"><u>Click
-                                    here to go to the App page</u></a></h5>
-                        </h5>
-                    </div>
+<div id="intro">
+  <h1>✦ Tarot Reading ✦</h1>
+  <p>
+    Close your eyes. Think of something or someone you trust.  
+    Hold your intention clearly… then enter to receive your answer.
+  </p>
+  <button onclick="start()">Enter</button>
+</div>
 
-                    <div class="w3-container">
+<div class="main" id="main">
 
-                        <p>Hey guys,
-                            Check out this AR Face Application, made in Unity3D.
-                        </p>
-                        <div class="w3-row">
-                            <div class="w3-col m8 s12">
+<div id="mystic-bg"></div>
 
-                            </div>
-                            <div class="w3-col m4 w3-hide-small">
+<h1>🔮 Tarot Reading</h1>
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<button id="drawBtn" onclick="draw()">Draw 3 Cards</button>
 
-            </div>
+<div class="cards" id="cards"></div>
 
+<div class="section" id="reading"></div>
+<div class="section" id="yesno"></div>
 
+</div>
 
-        </div>
-        
-        <div class="w3-row">
-            <div class="w3-col l20 s12 ">
+<script>
 
-                <div class="w3-card-4 w3-margin w3-white" id="corners">
-                    <img src="Links.png" loading="lazy" alt="Links Manager" class="mquery" style="width:100%" id="corners">
-                    <div class="w3-container">
-                        <h3><b>Link Manager</b></h3>
+function start(){
+  document.getElementById("intro").style.display="none";
+  document.getElementById("main").style.display="block";
+  createMist();
+}
 
-                        <h5><a href="LinksManager/" target="_blank"><u>Click here to go to the Links Manager
-                                    Page</u></a>
-                        </h5>
-                    </div>
+function createMist(){
+  const bg = document.getElementById("mystic-bg");
+  for(let i=0;i<12;i++){
+    let m=document.createElement("div");
+    m.className="mist";
+    m.style.left=Math.random()*100+"vw";
+    m.style.animationDuration=(20+Math.random()*20)+"s";
+    bg.appendChild(m);
+  }
+}
 
-                    <div class="w3-container">
+const deck = [
+"The High Priestess","Temperance","The Lovers","The Chariot",
+"Eight of Pentacles","Queen of Pentacles","Ten of Pentacles",
+"The Moon","The Tower","The Star","Four of Wands"
+];
 
-                        <p>Hey guys,
-                            Manage all of your links at a single place.
-                        </p>
-                        <div class="w3-row">
-                            <div class="w3-col m8 s12">
+const meanings = {
+"The High Priestess":"quiet awareness, inner knowing, something unseen influencing events",
+"Temperance":"balance, patience, things slowly coming together",
+"The Lovers":"emotional connection, important choice, alignment",
+"The Chariot":"movement forward, strong will, taking control",
+"Eight of Pentacles":"effort, learning, working on something seriously",
+"Queen of Pentacles":"stability, grounded life, practical thinking",
+"Ten of Pentacles":"long-term success, security, stable outcome",
+"The Moon":"uncertainty, confusion, unclear emotions",
+"The Tower":"sudden disruption, unexpected shift",
+"The Star":"healing, hope, calm returning",
+"Four of Wands":"comfort, stability, temporary peace"
+};
 
-                            </div>
-                            <div class="w3-col m4 w3-hide-small">
+const noCards = ["The Moon","The Tower"];
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-
-
-        </div>
-        <div class="w3-row">
-            <div class="w3-col l20 s12 ">
-
-                <div class="w3-card-4 w3-margin w3-white" id="corners">
-                    <img src="dailyJournals.png" loading="lazy" alt="Daily Journals" class="mquery" style="width:100%" id="corners">
-                    <div class="w3-container">
-                        <h3><b>Daily Journal</b></h3>
+function getCardValue(card){
+  return noCards.includes(card) ? -1 : 1;
+}
 
-                        <h5><a href="https://journal-uu7m.vercel.app/" target="_blank"><u>Click here to go to the
-                                    Daily Journal
-                                    Page</u></a>
-                        </h5>
-                    </div>
+function buildReading(p, pr, f){
 
-                    <div class="w3-container">
+let m1 = meanings[p];
+let m2 = meanings[pr];
+let m3 = meanings[f];
 
-                        <p>Hey guys,
-                            Keep a track of your thoughts without worrying about data privacy.
-                        </p>
-                        <div class="w3-row">
-                            <div class="w3-col m8 s12">
+function tone(card){
+  return noCards.includes(card) ? "dark" : "light";
+}
 
-                            </div>
-                            <div class="w3-col m4 w3-hide-small">
+let patterns = [
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
+() => `It feels like you’ve been carrying ${m1}. Now everything turns toward ${m2}, and from here it shifts into ${m3}.`,
 
-            </div>
+() => `There’s a quiet transition from ${m1} into ${m2}, and this slowly unfolds into ${m3}.`,
 
+() => `${m1} shaped where you are now. Through ${m2}, you experience the present, and it naturally builds into ${m3}.`,
 
+() => `Something about ${m1} still echoes. Right now, ${m2} defines the moment, and ahead, ${m3} begins to take form.`,
 
-        </div>
-        <div class="w3-row">
-            <div class="w3-col l20 s12 ">
-
-                <div class="w3-card-4 w3-margin w3-white" id="corners">
-                    <iframe style="width:100%; height:50vh" id="corners" src="https://www.youtube.com/embed/ew-R0Ol-6Dg"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                    <div class="w3-container">
-                        <h3><b>Universe Simulation</b></h3>
-
-                        <h5><a href="Universe" target="_blank"><u>Click here to go to the App Page</u></a>
-                        </h5>
-                    </div>
-
-                    <div class="w3-container">
-                      
-                        <p>Hey guys,
-                            Check out this amazing app.
-                        </p>
-                        <div class="w3-row">
-                            <div class="w3-col m8 s12">
+() => `${m1} hasn’t fully left you. It connects directly to ${m2}, and from there, leads into ${m3}.`,
 
-                            </div>
-                            <div class="w3-col m4 w3-hide-small">
+() => `What started as ${m1} is now turning into ${m2}, and soon it becomes ${m3}.`,
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
+() => `${m1}, ${m2}, then ${m3} — it feels like a continuous flow rather than separate events.`,
 
-            </div>
+() => `There’s a natural movement from ${m1} into ${m2}, slowly evolving toward ${m3}.`,
 
+() => `${m1} brought you here. ${m2} holds you here. ${m3} shows where it leads.`,
 
+() => `You are moving through layers — beginning with ${m1}, sitting in ${m2}, and heading toward ${m3}.`
 
-        </div>
-        <!-- First vlog -->
-        <div class="w3-row">
-            <div class="w3-col l20 s12 ">
+];
 
-                <div class="w3-card-4 w3-margin w3-white" id="corners">
-                     <iframe style="width:100%; height:50vh" id="corners" src="https://www.youtube.com/embed/YqbiBqSr5cY"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                    <div class="w3-container">
-                        <h3><b>Draw</b></h3>
+let story = patterns[Math.floor(Math.random()*patterns.length)]();
 
-                        <h5><a href="https://www.dropbox.com/s/5aprlmkl93mb8k6/Draw.apk?dl=0" target="_blank"><u>Click
-                                    here to go to the App page</u></a></h5>
-                    </div>
+return `
+<h2>Reading says</h2>
+<p>${story}</p>
+`;
+}
 
-                    <div class="w3-container">
-                      
-                        <p>Hey guys,
-                            Check out this amazing app.
-                            You can draw/sketch on your own android device,
-                            give it a try!
-                        </p>
-                        <div class="w3-row">
-                            <div class="w3-col m8 s12">
+function draw(){
 
-                            </div>
-                            <div class="w3-col m4 w3-hide-small">
+document.getElementById("drawBtn").style.display="none";
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
+let selected=[];
+while(selected.length<3){
+  let c=deck[Math.floor(Math.random()*deck.length)];
+  if(!selected.includes(c)) selected.push(c);
+}
 
-            </div>
+document.getElementById("cards").innerHTML=
+selected.map(c=>`<div class="card"><h3>${c}</h3></div>`).join("");
 
+document.getElementById("reading").innerHTML=
+buildReading(selected[0],selected[1],selected[2]);
 
+let score=getCardValue(selected[1])+getCardValue(selected[2]);
 
-        </div>
-        <div class="w3-row">
-            <div class="w3-col l20 s12 ">
+let result;
+if(score===2) result="Absolutely go for it";
+else if(score===1) result="Yes";
+else if(score===-1) result="No";
+else result="Absolutely no";
 
-                <div class="w3-card-4 w3-margin w3-white" id="corners">
-                     <iframe style="width:100%; height:50vh" id="corners" src="https://www.youtube.com/embed/IH_rByO0_-U"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                    <div class="w3-container">
-                        <h3><b>Match Game</b></h3>
+document.getElementById("yesno").innerHTML=
+`<h2>Answer</h2><p>${result}</p>`;
+}
 
-                        <h5><a href="https://www.dropbox.com/s/ruxhhowudteqs6t/Match%202.apk?dl=0"
-                                target="_blank"><u>Click
-                                    here to go to the App page</u></a>
+</script>
 
-                    </div>
-
-                    <div class="w3-container">
-                      
-                        <p>Hey guys,
-                            Check out this amazing Match 2 game.
-
-                            Collecting same numbers of the highest order will give you more points,whereas missing the
-                            match will cost you points,
-                            Don't click on the bombs,
-                            Score the highest points and showcase your name to the World.
-                            Download it now !
-                        </p>
-                        <div class="w3-row">
-                            <div class="w3-col m8 s12">
-
-                            </div>
-                            <div class="w3-col m4 w3-hide-small">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-
-        </div>
-    </div>
-
-
-
-
-
-   
-
-
-    <div class="w3-container w3-light-grey" style="padding:1px 50px" id="about">
-
-        <h2 class="w3-center w3-black">ABOUT</h2>
-        <hr>
-        <div>
-            <p style="margin-left: 9%; margin-right: 5%;">
-                Namaste,
-                My name is Shubham Nautiyal and I am a game developer, I love to explore things, Thanks for checking out
-                the content.
-            </p>
-        </div>
-    </div>
-
-
-    <footer class="w3-center w3-black w3-padding-1">
-        <div class="w3-xlarge w3-section ">
-            <a href="https://www.linkedin.com/in/shubham-nautiyal-ab6621157" style="text-decoration: none;"
-                target="_blank"> <i class="fa fa-linkedin w3-hover-opacity"></i></a>
-        </div>
-    </footer>
-    <script>
-        function readMore(clickId) {
-            var dotsList = document.querySelectorAll("#dots");
-            var moreTextList = document.querySelectorAll("#more");
-            var btnTextList = document.querySelectorAll("#readMoreBTN");
-
-        }
-
-        function onClick(element) {
-            document.getElementById("img01").src = element.src;
-            document.getElementById("modal01").style.display = "block";
-            var captionText = document.getElementById("caption");
-            captionText.innerHTML = element.alt;
-        }
-
-
-
-        var mySidebar = document.getElementById("mySidebar");
-
-        function w3_open() {
-            if (mySidebar.style.display === 'block') {
-                mySidebar.style.display = 'none';
-            } else {
-                mySidebar.style.display = 'block';
-            }
-        }
-
-
-        function w3_close() {
-            mySidebar.style.display = "none";
-        }
-
-        document.onkeydown = function (e) {
-            if (event.keyCode == 123) {
-                return false;
-            }
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
-                return false;
-            }
-        }
-
-    </script>
 </body>
-
 </html>
