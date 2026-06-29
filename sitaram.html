@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shri Ram Shalaka Prashnavali</title>
+
+<style>
+:root {
+    --primary-color: #d84315;
+    --secondary-color: #ffb300;
+    --bg-color: #fff8e1;
+    --card-bg: #ffffff;
+    --text-color: #3e2723;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 650px;
+    width: 100%;
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border: 3px double var(--primary-color);
+    text-align: center;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 80%;
+    padding: 12px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    gap: 4px;
+    margin: 20px 0;
+    background: #ffecb3;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.cell {
+    background: #fff;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    user-select: none;
+    border: 1px solid #ffe082;
+}
+
+.cell:hover {
+    background: var(--secondary-color);
+    color: #fff;
+}
+
+.result-modal {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    background: #fbe9e7;
+    border-left: 5px solid var(--primary-color);
+    border-radius: 8px;
+}
+
+.prediction-badge {
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.status-good { background:#c8e6c9; }
+.status-neutral { background:#fff9c4; }
+.status-bad { background:#ffcdd2; }
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.instructions {
+    background: #fff3cd;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>श्री राम शलाका प्रश्नावली  🙏</h1>
+    <!-- <div class="subtitle">Meditate on Lord Rama, type your question, and select a letter below.</div> -->
+
+        <div class="instructions">
+        <b>Instructions:</b><br>
+            1. Close your eyes<br>
+            2. Think deeply about your question<br>
+            3. Chant <b>Sita Ram</b> in your mind<br>
+            4. Mentally rotate your hand over the grid 3 times<br>
+            5. Open eyes and click ANY one box randomly
+        </div>
+
+    <div class="grid-container" id="shalakaGrid"></div>
+
+    <div class="result-modal" id="resultBox">
+        <div id="predictionBadge" class="prediction-badge"></div>
+        <div id="chaupaiOutput" style="font-size:20px;font-weight:bold;"></div>
+        <hr>
+        <div id="meaningOutput"></div>
+    
+    </div>
+</div>
+
+
+
+
+<script>
+const chaupais = [
+    { text:"सुनु सिय सत्य असीस हमारी। पूजिहि मन कामना तुम्हारी॥", status:"good", badge:"Highly Auspicious", meaning:"Success assured." },
+    { text:"प्रबिसि नगर कीजै सब काजा।", status:"good", badge:"Auspicious", meaning:"Begin confidently." },
+    { text:"उघरें अंत न होइ निबाहू।", status:"bad", badge:"Unfavorable", meaning:"Hidden danger." },
+    { text:"बिधि बस सुजन कुसंगत परहीं।", status:"bad", badge:"Caution", meaning:"Avoid bad influence." },
+    { text:"होइहै सोई जो राम रचि राखा।", status:"neutral", badge:"Divine Will", meaning:"Leave to destiny." },
+    { text:"मुद मंगलमय संत समाजू।", status:"good", badge:"Good Support", meaning:"Help will come." },
+    { text:"गरल सुधा रिपु करहिं मिताई।", status:"good", badge:"Very Auspicious", meaning:"Obstacles dissolve." },
+    { text:"बरुन कुबेर सुरेस समीरा।", status:"bad", badge:"Delay", meaning:"Heavy resistance." },
+    { text:"सुफल मनोरथ होहुँ तुम्हारे।", status:"good", badge:"Wish Fulfilled", meaning:"Desires fulfilled." }
+];
+
+const gridLetters = Array(225).fill("राम");
+
+const grid = document.getElementById("shalakaGrid");
+
+gridLetters.forEach((letter, index) => {
+    const div = document.createElement("div");
+    div.className = "cell";
+    div.innerText = letter;
+    div.onclick = () => handleClick(index);
+    grid.appendChild(div);
+});
+
+function handleClick(index) {
+    
+
+    const ch = chaupais[index % 9];
+
+    chaupaiOutput.innerText = ch.text;
+    meaningOutput.innerText = ch.meaning;
+
+    predictionBadge.innerText = ch.badge;
+    predictionBadge.className = "prediction-badge status-" + ch.status;
+
+    resultBox.style.display = "block";
+}
+
+function resetApp() {
+    questionInput.value = "";
+    resultBox.style.display = "none";
+}
+</script>
+
+</body>
+</html>
