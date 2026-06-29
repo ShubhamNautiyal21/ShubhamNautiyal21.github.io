@@ -198,8 +198,12 @@ button:hover {
 
 <h1>🔮 Tarot Reading</h1>
 
+
+
 <div class="cards" id="cards"></div>
+
 <div class="section" id="reading"></div>
+
 
 </div>
 
@@ -217,6 +221,7 @@ function start(){
   draw(); 
 }
 
+
 function createMist(){
   const bg = document.getElementById("mystic-bg");
   for(let i=0;i<12;i++){
@@ -228,37 +233,179 @@ function createMist(){
   }
 }
 
-const deck = ["The Fool","The Magician","The High Priestess","The Empress","The Emperor",
-"The Hierophant","The Lovers","The Chariot","Strength","The Hermit",
-"Wheel of Fortune","Justice","The Hanged Man","Death","Temperance",
-"The Devil","The Tower","The Star","The Moon","The Sun",
-"Judgement","The World"];
+const deck = [
+  // Major Arcana (22)
+  "The Fool","The Magician","The High Priestess","The Empress","The Emperor",
+  "The Hierophant","The Lovers","The Chariot","Strength","The Hermit",
+  "Wheel of Fortune","Justice","The Hanged Man","Death","Temperance",
+  "The Devil","The Tower","The Star","The Moon","The Sun",
+  "Judgement","The World",
+
+  // Cups
+  "Ace of Cups","Two of Cups","Three of Cups","Four of Cups","Five of Cups",
+  "Six of Cups","Seven of Cups","Eight of Cups","Nine of Cups","Ten of Cups",
+  "Page of Cups","Knight of Cups","Queen of Cups","King of Cups",
+
+  // Pentacles
+  "Ace of Pentacles","Two of Pentacles","Three of Pentacles","Four of Pentacles",
+  "Five of Pentacles","Six of Pentacles","Seven of Pentacles","Eight of Pentacles",
+  "Nine of Pentacles","Ten of Pentacles","Page of Pentacles","Knight of Pentacles",
+  "Queen of Pentacles","King of Pentacles",
+
+  // Swords
+  "Ace of Swords","Two of Swords","Three of Swords","Four of Swords",
+  "Five of Swords","Six of Swords","Seven of Swords","Eight of Swords",
+  "Nine of Swords","Ten of Swords","Page of Swords","Knight of Swords",
+  "Queen of Swords","King of Swords",
+
+  // Wands
+  "Ace of Wands","Two of Wands","Three of Wands","Four of Wands",
+  "Five of Wands","Six of Wands","Seven of Wands","Eight of Wands",
+  "Nine of Wands","Ten of Wands","Page of Wands","Knight of Wands",
+  "Queen of Wands","King of Wands"
+];
 
 const meanings = {
-"The Fool":"beginnings, innocence, spontaneity, free spirit",
-"The Magician":"manifestation, resourcefulness, power, inspired action",
-"The High Priestess":"intuition, mystery, inner knowledge, subconscious",
-"The Empress":"abundance, nurturing, fertility, creativity",
-"The Emperor":"authority, structure, leadership, stability",
-"The Lovers":"love, harmony, relationships, important choices",
-"The Sun":"joy, success, vitality, clarity",
-"The Moon":"illusion, fear, anxiety, subconscious mind",
-"The Star":"hope, faith, healing, renewal",
-"The Tower":"sudden upheaval, chaos, revelation, awakening"
-};
+  // Major Arcana
+  "The Fool":"beginnings, innocence, spontaneity, free spirit",
+  "The Magician":"manifestation, resourcefulness, power, inspired action",
+  "The High Priestess":"intuition, mystery, inner knowledge, subconscious",
+  "The Empress":"abundance, nurturing, fertility, creativity",
+  "The Emperor":"authority, structure, leadership, stability",
+  "The Hierophant":"tradition, spiritual wisdom, guidance, conformity",
+  "The Lovers":"love, harmony, relationships, important choices",
+  "The Chariot":"willpower, determination, control, success",
+  "Strength":"courage, inner strength, patience, compassion",
+  "The Hermit":"soul searching, introspection, solitude, guidance",
+  "Wheel of Fortune":"cycles, destiny, turning point, change",
+  "Justice":"fairness, truth, law, cause and effect",
+  "The Hanged Man":"suspension, new perspective, letting go",
+  "Death":"endings, transformation, transition, new beginnings",
+  "Temperance":"balance, moderation, harmony, patience",
+  "The Devil":"attachment, addiction, temptation, materialism",
+  "The Tower":"sudden upheaval, chaos, revelation, awakening",
+  "The Star":"hope, faith, healing, renewal",
+  "The Moon":"illusion, fear, anxiety, subconscious mind",
+  "The Sun":"joy, success, vitality, clarity",
+  "Judgement":"awakening, reflection, reckoning, rebirth",
+  "The World":"completion, fulfilment, achievement, wholeness",
 
+  // Cups (emotions & relationships)
+  "Ace of Cups":"new emotions, love, compassion, emotional beginning",
+  "Two of Cups":"partnership, unity, mutual attraction, connection",
+  "Three of Cups":"celebration, friendship, community, joy",
+  "Four of Cups":"apathy, contemplation, discontent, reevaluation",
+  "Five of Cups":"loss, regret, disappointment, focusing on negatives",
+  "Six of Cups":"nostalgia, childhood memories, innocence, reunion",
+  "Seven of Cups":"illusion, choices, fantasy, confusion",
+  "Eight of Cups":"walking away, withdrawal, searching for meaning",
+  "Nine of Cups":"contentment, satisfaction, wishes fulfilled",
+  "Ten of Cups":"happiness, harmony, emotional fulfilment, family",
+  "Page of Cups":"creative beginnings, intuition, new emotional messages",
+  "Knight of Cups":"romance, charm, following the heart, idealism",
+  "Queen of Cups":"compassion, emotional security, intuition, care",
+  "King of Cups":"emotional balance, control, wisdom, diplomacy",
+
+  // Pentacles (money & material life)
+  "Ace of Pentacles":"new financial opportunity, prosperity, manifestation",
+  "Two of Pentacles":"balance, multitasking, adaptability, priorities",
+  "Three of Pentacles":"teamwork, collaboration, skill, learning",
+  "Four of Pentacles":"security, control, saving, possessiveness",
+  "Five of Pentacles":"financial loss, hardship, insecurity, struggle",
+  "Six of Pentacles":"generosity, sharing, charity, support",
+  "Seven of Pentacles":"patience, investment, long-term growth",
+  "Eight of Pentacles":"apprenticeship, diligence, skill development",
+  "Nine of Pentacles":"independence, luxury, self-sufficiency",
+  "Ten of Pentacles":"wealth, legacy, long-term success, stability",
+  "Page of Pentacles":"learning, ambition, planning, new opportunities",
+  "Knight of Pentacles":"hard work, reliability, persistence, routine",
+  "Queen of Pentacles":"practicality, nurturing, financial stability",
+  "King of Pentacles":"wealth, leadership, discipline, abundance",
+
+  // Swords (thoughts & challenges)
+  "Ace of Swords":"clarity, truth, breakthroughs, new ideas",
+  "Two of Swords":"indecision, stalemate, avoidance, blocked emotions",
+  "Three of Swords":"heartbreak, sorrow, emotional pain",
+  "Four of Swords":"rest, recovery, meditation, retreat",
+  "Five of Swords":"conflict, tension, defeat, betrayal",
+  "Six of Swords":"transition, moving on, leaving difficulties behind",
+  "Seven of Swords":"deception, strategy, secrecy, sneakiness",
+  "Eight of Swords":"restriction, fear, feeling trapped, limitation",
+  "Nine of Swords":"anxiety, worry, stress, nightmares",
+  "Ten of Swords":"painful ending, betrayal, collapse, defeat",
+  "Page of Swords":"curiosity, communication, alertness, new ideas",
+  "Knight of Swords":"action, ambition, fast thinking, impulsiveness",
+  "Queen of Swords":"independence, clarity, perception, truth",
+  "King of Swords":"authority, logic, intellect, discipline",
+
+  // Wands (action & energy)
+  "Ace of Wands":"inspiration, new ventures, creative spark",
+  "Two of Wands":"planning, future decisions, discovery",
+  "Three of Wands":"expansion, progress, foresight",
+  "Four of Wands":"celebration, stability, home, harmony",
+  "Five of Wands":"competition, conflict, disagreement",
+  "Six of Wands":"success, recognition, victory, confidence",
+  "Seven of Wands":"defense, perseverance, standing your ground",
+  "Eight of Wands":"movement, speed, progress, quick action",
+  "Nine of Wands":"resilience, persistence, last stand",
+  "Ten of Wands":"burden, responsibility, stress, overload",
+  "Page of Wands":"enthusiasm, exploration, new ideas",
+  "Knight of Wands":"energy, adventure, passion, impulsiveness",
+  "Queen of Wands":"confidence, courage, determination, charisma",
+  "King of Wands":"leadership, vision, influence, boldness"
+};
 const noCards = ["The Moon","The Tower"];
 
+function getCardValue(card){
+  return noCards.includes(card) ? -1 : 1;
+}
+
 function buildReading(p, pr, f){
+
 let m1 = meanings[p];
 let m2 = meanings[pr];
 let m3 = meanings[f];
 
-return `<h2>Reading says</h2>
-<p>${m1}, ${m2}, then ${m3}.</p>`;
+function tone(card){
+  return noCards.includes(card) ? "dark" : "light";
+}
+
+let patterns = [
+
+() => `It feels like you’ve been carrying ${m1}. Now everything turns toward ${m2}, and from here it shifts into ${m3}.`,
+
+() => `There’s a quiet transition from ${m1} into ${m2}, and this slowly unfolds into ${m3}.`,
+
+() => `${m1} shaped where you are now. Through ${m2}, you experience the present, and it naturally builds into ${m3}.`,
+
+() => `Something about ${m1} still echoes. Right now, ${m2} defines the moment, and ahead, ${m3} begins to take form.`,
+
+() => `${m1} hasn’t fully left you. It connects directly to ${m2}, and from there, leads into ${m3}.`,
+
+() => `What started as ${m1} is now turning into ${m2}, and soon it becomes ${m3}.`,
+
+() => `${m1}, ${m2}, then ${m3} — it feels like a continuous flow rather than separate events.`,
+
+() => `There’s a natural movement from ${m1} into ${m2}, slowly evolving toward ${m3}.`,
+
+() => `${m1} brought you here. ${m2} holds you here. ${m3} shows where it leads.`,
+
+() => `You are moving through layers — beginning with ${m1}, sitting in ${m2}, and heading toward ${m3}.`
+
+];
+
+let story = patterns[Math.floor(Math.random()*patterns.length)]();
+
+return `
+<h2>Reading says</h2>
+<p>${story}</p>
+`;
 }
 
 function draw(){
+
+
+
 let selected=[];
 while(selected.length<3){
   let c=deck[Math.floor(Math.random()*deck.length)];
@@ -270,6 +417,10 @@ selected.map(c=>`<div class="card"><h3>${c}</h3></div>`).join("");
 
 document.getElementById("reading").innerHTML=
 buildReading(selected[0],selected[1],selected[2]);
+
+let score=getCardValue(selected[1])+getCardValue(selected[2]);
+
+let result;
 }
 
 </script>
