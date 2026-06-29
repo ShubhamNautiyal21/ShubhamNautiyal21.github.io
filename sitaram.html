@@ -170,16 +170,62 @@ button {
 
 <script>
 const chaupais = [
-    { text:"सुनु सिय सत्य असीस हमारी। पूजिहि मन कामना तुम्हारी॥", status:"good", badge:"Highly Auspicious", meaning:"Success assured." },
-    { text:"प्रबिसि नगर कीजै सब काजा।", status:"good", badge:"Auspicious", meaning:"Begin confidently." },
-    { text:"उघरें अंत न होइ निबाहू।", status:"bad", badge:"Unfavorable", meaning:"Hidden danger." },
-    { text:"बिधि बस सुजन कुसंगत परहीं।", status:"bad", badge:"Caution", meaning:"Avoid bad influence." },
-    { text:"होइहै सोई जो राम रचि राखा।", status:"neutral", badge:"Divine Will", meaning:"Leave to destiny." },
-    { text:"मुद मंगलमय संत समाजू।", status:"good", badge:"Good Support", meaning:"Help will come." },
-    { text:"गरल सुधा रिपु करहिं मिताई।", status:"good", badge:"Very Auspicious", meaning:"Obstacles dissolve." },
-    { text:"बरुन कुबेर सुरेस समीरा।", status:"bad", badge:"Delay", meaning:"Heavy resistance." },
-    { text:"सुफल मनोरथ होहुँ तुम्हारे।", status:"good", badge:"Wish Fulfilled", meaning:"Desires fulfilled." }
+    { 
+        text: "सुनु सिय सत्य असीस हमारी। पूजिहि मन कामना तुम्हारी॥", 
+        status: "good", 
+        badge: "Highly Auspicious | सर्वसिद्धि", 
+        meaning: "Deep Meaning: Spoken by Goddess Parvati to Sita. It means that when your devotion is pure and aligned with righteousness, cosmic energy will break its silence to grant your heart's deepest desires. Success is absolutely assured." 
+    },
+    { 
+        text: "प्रबिसि नगर कीजै सब काजा। ह्रदयं राखि कोसलपुर राजा॥", 
+        status: "good", 
+        badge: "Auspicious | कार्य सिद्धि", 
+        meaning: "Deep Meaning: Spoken by Lankini to Hanuman. It provides a formula for overcoming fear: if you anchor your mind to your inner moral compass and divine protection, even a hostile environment becomes safe for you to achieve victory." 
+    },
+    { 
+        text: "उघरें अंत न होइ निबाहू। कालनेमि जिमि रावन राहू॥", 
+        status: "bad", 
+        badge: "Unfavorable | असफलता", 
+        meaning: "Deep Meaning: Tulsidas warns that while deceit, false identities, or ill intentions (like those of Kalanemi, Ravana, and Rahu) can bring temporary wins, cosmic law ensures everything eventually crumbles into exposure and failure." 
+    },
+    { 
+        text: "बिधि बस सुजन कुसंगत परहीं। फनि मनि सम निज गुन नहिं तहरहीं॥", 
+        status: "bad", 
+        badge: "Caution | कुसंगति से बचें", 
+        meaning: "Deep Meaning: A snake is toxic, but the rare gemstone on its head remains pure. Similarly, if fate forces you into bad company or a tough situation, you must fiercely guard your inner values and avoid absorbing the toxicity around you." 
+    },
+    { 
+        text: "होइहै सोई जो राम रचि राखा। को करि तरक बढ़ावै साखा॥", 
+        status: "neutral", 
+        badge: "Divine Will | ईश्वर इच्छा", 
+        meaning: "Deep Meaning: Spoken by Lord Shiva. This teaches ultimate surrender and points out the futility of overthinking or anxiety. Do your best, stop arguing with destiny, and let things unfold according to the supreme cosmic design." 
+    },
+    { 
+        text: "मुद मंगलमय संत समाजू। जो जग जंगम तीरथराजू॥", 
+        status: "good", 
+        badge: "Good Support | सहायता", 
+        meaning: "Deep Meaning: Tulsidas compares a gathering of wise, noble souls to a moving holy pilgrimage. While a physical river cleanses the body, aligning with good advisors and wise company will immediately elevate your clarity and clear your path." 
+    },
+    { 
+        text: "गरल सुधा रिपु करहिं मिताई। गोपद सिंधु अनल सितलाई॥", 
+        status: "good", 
+        badge: "Very Auspicious | संकट नाश", 
+        meaning: "Deep Meaning: Hanuman feels this comfort inside enemy territory. When you act out of pure duty, the laws of the world bend in your favor: poison turns to nectar, massive problems shrink to the size of a puddle, and obstacles completely melt." 
+    },
+    { 
+        text: "बरुन कुबेर सुरेस समीरा। रन सनमुख धरि सकहिं न धीरा॥", 
+        status: "bad", 
+        badge: "Delay & Dispute | भारी विरोध", 
+        meaning: "Deep Meaning: This describes the overwhelming material strength of Ravana's army that shakes even the gods of nature. It indicates you are facing a massive, systemic obstacle right now; rushing forward with ordinary ego will not work." 
+    },
+    { 
+        text: "सुफल मनोरथ होहुँ तुम्हारे। रामु लखनु सुनि भए सुखारे॥", 
+        status: "good", 
+        badge: "Wish Fulfilled | मनोकामना पूर्ण", 
+        meaning: "Deep Meaning: Forest sages bless Rama and Lakshmana, bringing joy to the divine. It shows that when your intentions are righteous, the entire universe experiences a sense of harmony and naturally opens up the doors to fulfill your goals." 
+    }
 ];
+
 
 const gridLetters = Array(225).fill("राम");
 
