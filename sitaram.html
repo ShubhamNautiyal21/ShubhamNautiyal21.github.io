@@ -75,6 +75,12 @@ input[type="text"] {
     border-radius: 4px;
     user-select: none;
     border: 1px solid #ffe082;
+
+    /* ✅ FIX */
+    font-size: clamp(10px, 2.5vw, 16px);
+    line-height: 1;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .cell:hover {
@@ -120,7 +126,16 @@ button {
     font-size: 15px;
     line-height: 1.6;
 }
+@media (max-width: 480px) {
+    .grid-container {
+        gap: 2px;
+        padding: 6px;
+    }
 
+    .cell {
+        font-size: 10px;
+    }
+}
 </style>
 </head>
 
