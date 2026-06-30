@@ -13,7 +13,52 @@ html {
     height: 100%;
     line-height: 1.8;
 }
+/* Mystical glow on cards */
+#blog .w3-card-4{
+    border: 1px solid rgba(128,0,128,0.15);
+    backdrop-filter: blur(2px);
+}
 
+#blog .w3-card-4:hover{
+    transform: translateY(-5px);
+    box-shadow:
+        0 0 10px rgba(128,0,128,0.2),
+        0 0 20px rgba(0,0,255,0.15),
+        0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Smooth title glow */
+#blog h3{
+    transition: all 0.3s ease;
+}
+
+#blog .w3-card-4:hover h3{
+    color: #5e2ca5;
+    text-shadow: 0 0 8px rgba(128,0,128,0.25);
+}
+
+/* Elegant card background */
+#blog .w3-card-4{
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,1),
+        rgba(248,248,255,1)
+    );
+}
+
+/* Read more button effect */
+#blog button{
+    transition: all 0.3s ease;
+}
+
+#blog button:hover{
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,255,0.8),
+        rgba(128,0,128,0.8)
+    ) !important;
+    transform: scale(1.05);
+}
 .bgimg-1 {
     background-position: center;
     background-size: cover;
