@@ -1,99 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Random Joke</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisdom of Laughter</title>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Raleway">
 
     <style>
-        body{
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Raleway", sans-serif;
+        }
 
-            background-color: rgba(0, 0, 0, 0.583);
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #111, #1f1f1f);
             color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
         }
 
-        .Main{
+        .container {
+            width: 90%;
+            max-width: 900px;
             text-align: center;
-            margin-top: 50px;
-          
-        }
-        button{
-            position: fixed;
-            bottom: 0;
-            right: 0;
-
-            margin-bottom: 50px;
-            margin-right: 50px ;
-            padding: 3px 9px;
-            background-color: rgb(127, 255, 212);
-            font-size:xx-large;
-            transition: 0.3s;
-             
-        }
-        button:hover{
-            padding: 5px 15px;
-            background-color: rgba(127, 255, 212, 0.643);
         }
 
+        .title {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
 
-        #random{
+        .subtitle {
+            color: #bdbdbd;
+            margin-bottom: 40px;
+        }
 
-           margin-top: 200px;
-           font-size: xx-large;
+        .joke-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            min-height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #random {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .refresh-btn {
+            margin-top: 35px;
+            border: none;
+            background: white;
+            color: black;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all .3s ease;
+        }
+
+        .refresh-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255,255,255,0.2);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .quote-mark {
+            font-size: 5rem;
+            opacity: .1;
+            position: absolute;
+        }
+
+        .footer-note {
+            margin-top: 25px;
+            color: #888;
+            font-size: .9rem;
         }
     </style>
 </head>
+
 <body onload="LoadJoke()">
-    <div class="Main">
-        <button onclick="LoadJoke()">More</button>
-        
+
+    <div class="container">
+
+        <h1 class="title">Wisdom of Laughter</h1>
+
+        <p class="subtitle">
+            Sometimes truth arrives dressed as humor.
+        </p>
+
+        <div class="joke-card">
+            <p id="random">Loading...</p>
+        </div>
+
+        <button class="refresh-btn" onclick="LoadJoke()">
+            ✨ Another One
+        </button>
+
+        <div class="footer-note">
+            A smile is sometimes the shortest path to wisdom.
+        </div>
+
     </div>
-  
+
     <script>
-          const url = "https://icanhazdadjoke.com/slack";
-      function LoadJoke(){
-            
 
-            if(document.getElementById('random')!=null){
+        const url = "https://icanhazdadjoke.com/slack";
 
-                document.querySelector('.Main').removeChild(document.getElementById('random'));
+        async function LoadJoke() {
+
+            const para = document.getElementById("random");
+            para.innerText = "Loading...";
+
+            try {
+
+                const response = await fetch(url);
+                const data = await response.json();
+
+                para.innerText =
+                    data.attachments[0].fallback;
+
             }
-            let para=document.createElement('p');
-            para.id='random';
-            document.querySelector('.Main').appendChild(para);
-            para.innerText= "Wait...";
-            let quote;
-             ReturnRandomQuote().then(data => {
-                quote=data
-                console.log(quote)
-                    })
-                    .catch(error => {
-                        quote=error
-                    })
-                    .finally(()=>{
-                        para.innerText= quote;
-                    })
-                   
-                    console.log(1123);
-          
-        
-        }  ;
+            catch {
 
-        
-       let ReturnRandomQuote=async function(){
-      
-         try{
-            let response=await fetch(url);
-         
-            let data=await response.json();
-            console.log(data.attachments[0].fallback)
-            return data.attachments[0].fallback;
-         }
-         catch(e){
-            return "Error while getting data !";
-         }
-       }
+                para.innerText =
+                    "Even silence has its own joke today.";
+            }
+        }
+
     </script>
+
 </body>
+
 </html>
