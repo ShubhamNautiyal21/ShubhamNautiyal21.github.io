@@ -31,6 +31,12 @@
             border-radius: 1px;
         }
 
+        .blog-thumb{
+            width:100%;
+            height:220px;
+            object-fit:cover;
+        }
+
         body,
         h1,
         h2,
