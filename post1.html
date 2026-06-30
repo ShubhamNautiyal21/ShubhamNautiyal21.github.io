@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Supreme's Story: Lord Krishna's Divine Leela / The Art of Rendering Realities and Render Textures in Unity</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="icon" href="radar-tracking-icon.svg" type="image/x-icon">
+
+    <style>
+
+body{
+  background-image:url('mainBg.jpg') !important;
+  background-repeat:repeat !important;
+}
+
+button:active{
+}
+
+hr{
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 1px;
+}
+
+body,h1,h2,h3,h4,h5 {
+  font-family: "Papyrus", sans-serif
+}
+
+p{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+a{
+  font-family:'Times New Roman', Times, serif;
+}
+
+.p{
+  background-color: rgba(0, 0, 0, 0.175);
+}
+
+#corners{
+  border-radius: 10px;
+  border-radius: 10px 15px 15px 10px;
+}
+
+#more {
+  display: none;
+}
+
+#readMoreBTN{
+  background-color: #393939;
+  border: none;
+  color: white;
+  padding: 1px 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin-left: 1.5px;
+}
+
+.headingClass{
+  font-size: 0.7em;
+}
+
+.no-js #loader {
+  display: none;
+}
+
+.js #loader {
+  display: block;
+  position: absolute;
+  left: 100px;
+  top: 0;
+}
+
+.se-pre-con {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(https://media.giphy.com/media/3AMRa6DRUhMli/giphy.gif) center no-repeat rgb(0, 0, 0);
+}
+
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+  </head>
+
+<body class="p" oncontextmenu="return false;">
+
+<div class="se-pre-con"></div>
+
+<script>
+$(window).load(function () {
+   $(".se-pre-con").fadeOut("slow");
+});
+</script>
+
+<div class="w3-content" style="max-width:1400px">
+
+<div class="w3-content" style="max-width:900px">
+
+<header class="w3-container w3-center w3-padding-20">
+</header>
+
+<!-- First vlog -->
+<div class="w3-col l20 s12 corner">
+
+  <div class="w3-card-4 w3-margin w3-white" id="corners">
+
+
+<div style="display:flex;">
+    <img src="post1.1.jpg" alt="Background" style="width:50%;" id="corners">
+    <img src="post1.2.jpg" alt="Background" style="width:50%;" id="corners">
+</div>
+
+    <div class="w3-container">
+      <h3>
+        <b>The Supreme's Story: Lord Krishna's Divine Leela / The Art of Rendering Realities and Render Textures in Unity</b>
+      </h3>
+    </div>
+
+    <div class="w3-container">
+
+      <p>
+        In the serene village of <b>Vrindavan</b>, young Lord Krishna spent his days immersed in playful adventures with his friends. Whether tending cows, wandering through lush meadows, or engaging in innocent mischief, Krishna's childhood was filled with charm and divine grace.
+      </p>
+
+      <p>
+        One day, while playing in the muddy fields, Krishna's friends noticed something unusual. They saw him pick up a handful of mud and taste it. Concerned, they hurried to Mother Yashoda and complained about Krishna's latest prank.
+      </p>
+
+      <p>
+        Yashoda immediately approached Krishna and questioned him. Standing before her with his innocent smile, Krishna denied having eaten any mud. Yet the traces around his lips suggested otherwise. Determined to discover the truth, Yashoda asked Krishna to open his mouth.
+      </p>
+
+      <p>
+        What Yashoda witnessed next was beyond the limits of ordinary human comprehension. Inside Krishna's tiny mouth, she beheld the <b>entire universe</b>—galaxies, stars, planets, mountains, rivers, oceans, forests, living beings, and the infinite cosmic expanse itself. Everything that existed appeared to reside within him.
+      </p>
+
+      <p>
+        Overwhelmed by this divine revelation, Yashoda struggled to understand what she was seeing. In that moment, Krishna revealed his true nature as the Supreme Being. The universe was not merely created by him—it existed within him. The child standing before her was none other than the all-pervading Lord of creation.
+      </p>
+
+      <p>
+        As the divine mystery unfolded, Krishna manifested his transcendental form as <b>Lord Vishnu</b>, filling Yashoda with profound awe and reverence. From that day onward, she understood that her beloved son was the Supreme Lord himself, and her devotion deepened immeasurably.
+      </p>
+
+      <hr>
+
+      <h3><b>Render Texture in Unity</b></h3>
+
+      <p>
+        In Unity game development, a <b>Render Texture</b> is a powerful feature that allows the output of one camera to be captured and displayed as a texture elsewhere in a scene. It is commonly used to create mirrors, surveillance cameras, portals, minimaps, and various advanced visual effects.
+      </p>
+
+      <p>
+        Rather than being restricted to a single viewpoint, a render texture enables an entirely different scene to be displayed within a confined surface. A complete world can be rendered and projected onto a small object while preserving all its visual complexity and depth.
+      </p>
+
+      <hr>
+
+      <h3><b>Parallel Between Lord Krishna and Render Texture</b></h3>
+
+      <p>
+        The divine episode of Krishna revealing the universe within his mouth presents a fascinating conceptual parallel to Unity's render texture system.
+      </p>
+
+      <p>
+        Just as a render texture allows developers to project a vast digital reality onto a limited surface, Lord Krishna revealed an infinite cosmic reality within the small confines of a human mouth. While render textures expand beyond the limitations of a single camera's perspective, Krishna's divine revelation transcended the limitations of human perception itself.
+      </p>
+
+      <p>
+        Of course, spiritual traditions regard this event as a manifestation of divine omnipotence rather than technology. Yet for those who work with computer graphics or game development, it offers a beautiful analogy between ancient spiritual wisdom and modern rendering concepts.
+      </p>
+
+      <hr>
+
+      <h3><b>Question for Reflection</b></h3>
+
+      <p>
+        <i>
+          "Did Lord Krishna, as the Supreme form, possess access to a divine 'render texture' technology capable of displaying the entire universe within a small human mouth, or is modern technology simply providing us with a faint glimpse of possibilities that the divine has always embodied?"
+        </i>
+      </p>
+
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+        </div>
+
+        <div class="w3-col m4 w3-hide-small">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+ 
+
+</div>
+
+<div class="w3-row">
+  <div class="w3-col l20 s12">
+    
+  </div>
+
+  <div class="w3-col l4">
+  </div>
+
+</div>
+
+<br>
+</div>
+
+<script>
+
+function readMore(clickId) {
+  var dotsList = document.querySelectorAll("#dots");
+  var moreTextList = document.querySelectorAll("#more");
+  var btnTextList = document.querySelectorAll("#readMoreBTN");
+
+  if (dotsList[clickId].style.display === "none") {
+    dotsList[clickId].style.display = "inline";
+    btnTextList[clickId].innerHTML = "Read more";
+    moreTextList[clickId].style.display = "none";
+  } else {
+    dotsList[clickId].style.display = "none";
+    btnTextList[clickId].innerHTML = "Read less";
+    moreTextList[clickId].style.display = "inline";
+  }
+}
+
+document.onkeydown = function(e) {
+  if(event.keyCode == 123) {
+    return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+    return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+    return false;
+  }
+  if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+    return false;
+  }
+  if(e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
+    return false;
+  }
+}
+
+</script>
+
+</body>

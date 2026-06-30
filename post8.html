@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Timeless Keys: From Palm Leaves to Databases</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="icon" href="radar-tracking-icon.svg" type="image/x-icon">
+
+    <style>
+
+body{
+  background-image:url('mainBg.jpg') !important;
+  background-repeat:repeat !important;
+}
+
+button:active{
+}
+
+hr{
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 1px;
+}
+
+body,h1,h2,h3,h4,h5 {
+  font-family: "Papyrus", sans-serif
+}
+
+p{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+a{
+  font-family:'Times New Roman', Times, serif;
+}
+
+.p{
+  background-color: rgba(0, 0, 0, 0.175);
+}
+
+#corners{
+  border-radius: 10px;
+  border-radius: 10px 15px 15px 10px;
+}
+
+#more {
+  display: none;
+}
+
+#readMoreBTN{
+  background-color: #393939;
+  border: none;
+  color: white;
+  padding: 1px 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin-left: 1.5px;
+}
+
+.headingClass{
+  font-size: 0.7em;
+}
+
+.no-js #loader {
+  display: none;
+}
+
+.js #loader {
+  display: block;
+  position: absolute;
+  left: 100px;
+  top: 0;
+}
+
+.se-pre-con {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(https://media.giphy.com/media/3AMRa6DRUhMli/giphy.gif) center no-repeat rgb(0, 0, 0);
+}
+
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+  </head>
+
+<body class="p" oncontextmenu="return false;">
+
+<div class="se-pre-con"></div>
+
+<script>
+$(window).load(function () {
+   $(".se-pre-con").fadeOut("slow");
+});
+</script>
+
+<div class="w3-content" style="max-width:1400px">
+
+<div class="w3-content" style="max-width:900px">
+
+<header class="w3-container w3-center w3-padding-20">
+</header>
+
+<div class="w3-col l20 s12 corner">
+
+  <div class="w3-card-4 w3-margin w3-white" id="corners">
+
+    <img src="post8.1.jpg" alt="Background" style="width:100%" id="corners">
+
+    <div class="w3-container">
+      <h3>
+        <b>Timeless Keys: From Palm Leaves to Databases</b>
+      </h3>
+    </div>
+
+    <div class="w3-container">
+
+      <p>
+        Thousands of years ago, Sage Agastya and other revered rishis are believed to have recorded lives and destinies on palm leaves, a tradition commonly associated with <b>Nadi Astrology</b>.
+      </p>
+
+      <p>
+        One of the first steps in locating a person's record was the use of their <b>thumb impression</b>. Long before modern biometric systems existed, it was understood that no two thumb impressions are exactly alike.
+      </p>
+
+      <p>
+        For anyone familiar with databases, this idea immediately feels familiar.
+      </p>
+
+      <p>
+        In database design, a <b>Primary Key</b> is a field that uniquely identifies each record. It must be unique and cannot be null. Every row has its own identity, ensuring that no confusion exists between one record and another.
+      </p>
+
+      <p>
+        In many ways, a thumb impression serves the same purpose. It acts as a unique identifier that distinguishes one individual from every other person.
+      </p>
+
+      <p>
+        However, the thumb impression alone was not always sufficient to immediately locate the exact palm leaf among countless records. The astrologer would often verify additional information such as family background, birth order, important life events, or other identifying details.
+      </p>
+
+      <p>
+        This brings us to another fascinating database concept: the <b>Composite Key</b>.
+      </p>
+
+      <p>
+        A Composite Key is created when a single field is not enough to guarantee uniqueness. By combining multiple fields together, a record can be identified with complete accuracy.
+      </p>
+
+      <p>
+        Consider a database where neither a first name nor a date of birth is unique on its own. By combining several attributes, we can create a reliable identifier. Similarly, multiple pieces of personal information were traditionally used to narrow down and locate the correct palm leaf record.
+      </p>
+
+      <p>
+        What is remarkable is not whether one views Nadi Astrology as history, tradition, or spirituality, but how closely the underlying identification principle resembles concepts that modern software engineers use every day.
+      </p>
+
+      <p>
+        Our ancestors may not have written SQL queries or designed relational database schemas, yet they recognized the importance of uniqueness, verification, and accurate identification.
+      </p>
+
+      <p>
+        Today we implement these ideas through Primary Keys, Composite Keys, indexes, and database constraints. Centuries ago, similar principles appeared in entirely different forms through palm leaf records and thumb impressions.
+      </p>
+
+      <p>
+        The tools have changed, but the logic remains strikingly familiar.
+      </p>
+
+      <p>
+        <b>
+          Different tools, same principle:
+          uniqueness through the right keys.
+        </b>
+      </p>
+
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+        </div>
+
+        <div class="w3-col m4 w3-hide-small">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<br>
+
+</div>
+
+<script>
+
+function readMore(clickId) {
+  var dotsList = document.querySelectorAll("#dots");
+  var moreTextList = document.querySelectorAll("#more");
+  var btnTextList = document.querySelectorAll("#readMoreBTN");
+
+  if (dotsList[clickId].style.display === "none") {
+    dotsList[clickId].style.display = "inline";
+    btnTextList[clickId].innerHTML = "Read more";
+    moreTextList[clickId].style.display = "none";
+  } else {
+    dotsList[clickId].style.display = "none";
+    btnTextList[clickId].innerHTML = "Read less";
+    moreTextList[clickId].style.display = "inline";
+  }
+}
+
+document.onkeydown = function(e) {
+if(event.keyCode == 123) {
+return false;
+}
+if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+return false;
+}
+if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+return false;
+}
+if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+return false;
+}
+if(e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)){
+return false;
+}
+}
+
+</script>
+
+</body>
+</html>

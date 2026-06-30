@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Virtual DOM of the Mind: ReactJS and Human Perception</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="icon" href="radar-tracking-icon.svg" type="image/x-icon">
+
+    <style>
+
+body{
+  background-image:url('mainBg.jpg') !important;
+  background-repeat:repeat !important;
+}
+
+button:active{
+}
+
+hr{
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 1px;
+}
+
+body,h1,h2,h3,h4,h5 {
+  font-family: "Papyrus", sans-serif
+}
+
+p{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+a{
+  font-family:'Times New Roman', Times, serif;
+}
+
+.p{
+  background-color: rgba(0, 0, 0, 0.175);
+}
+
+#corners{
+  border-radius: 10px;
+  border-radius: 10px 15px 15px 10px;
+}
+
+#more {
+  display: none;
+}
+
+#readMoreBTN{
+  background-color: #393939;
+  border: none;
+  color: white;
+  padding: 1px 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin-left: 1.5px;
+}
+
+.headingClass{
+  font-size: 0.7em;
+}
+
+.no-js #loader {
+  display: none;
+}
+
+.js #loader {
+  display: block;
+  position: absolute;
+  left: 100px;
+  top: 0;
+}
+
+.se-pre-con {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(https://media.giphy.com/media/3AMRa6DRUhMli/giphy.gif) center no-repeat rgb(0, 0, 0);
+}
+
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+  </head>
+
+<body class="p" oncontextmenu="return false;">
+
+<div class="se-pre-con"></div>
+
+<script>
+$(window).load(function () {
+   $(".se-pre-con").fadeOut("slow");
+});
+</script>
+
+<div class="w3-content" style="max-width:1400px">
+
+<div class="w3-content" style="max-width:900px">
+
+<header class="w3-container w3-center w3-padding-20">
+</header>
+
+<div class="w3-col l20 s12 corner">
+
+  <div class="w3-card-4 w3-margin w3-white" id="corners">
+
+    <img src="post6.1.jpg" alt="Background" style="width:100%" id="corners">
+
+    <div class="w3-container">
+      <h3>
+        <b>The Virtual DOM of the Mind: ReactJS and Human Perception</b>
+      </h3>
+    </div>
+
+    <div class="w3-container">
+
+      <p>
+        In the world of technology, many innovations are not entirely new concepts but rather modern manifestations of principles that have always existed around us. While working with ReactJS, I often find striking similarities between the architecture of modern web applications and the way the human mind perceives, evaluates, and reacts to reality.
+      </p>
+
+      <p>
+        One of the most fascinating examples of this connection is React's <b>Virtual DOM</b>.
+      </p>
+
+      <p>
+        The Virtual DOM is essentially a lightweight representation of the actual DOM. Rather than directly manipulating the browser's structure whenever data changes, React maintains a virtual representation of the interface. It continuously compares the previous state with the current state and determines the most efficient set of updates required to synchronize the real DOM.
+      </p>
+
+      <p>
+        This approach significantly improves performance by avoiding unnecessary changes and ensuring that only the elements that truly require modification are updated.
+      </p>
+
+      <p>
+        What makes this concept particularly intriguing is how closely it resembles the way our minds interact with the world.
+      </p>
+
+      <p>
+        Each of us carries an internal blueprint of reality. We develop expectations, beliefs, assumptions, ideals, and mental models about how life should unfold. This internal framework functions much like a personal "Virtual DOM" through which we interpret the world around us.
+      </p>
+
+      <p>
+        Every moment, our minds compare this internal model against our current experiences. When reality aligns with our expectations, the system remains relatively stable. However, when a discrepancy emerges between what we expect and what actually exists, a reaction occurs.
+      </p>
+
+      <p>
+        This reaction may manifest as stress, disappointment, frustration, excitement, motivation, or a desire to take corrective action. Much like React detecting differences during its comparison process, our minds identify inconsistencies between the internal state and external reality.
+      </p>
+
+      <p>
+        In a sense, much of human emotion can be viewed as a response to these "state mismatches." The greater the gap between expectation and reality, the more significant the reaction often becomes.
+      </p>
+
+      <p>
+        Another interesting parallel lies in the concept of <b>state management</b>. In React applications, state represents the data that drives the user interface. As state changes, the application responds accordingly, updating only the necessary components.
+      </p>
+
+      <p>
+        Human beings also possess internal states. Our emotions, thoughts, memories, perceptions, beliefs, and moods constantly influence how we experience the world. Just as poorly managed state can lead to inefficient applications, unmanaged thoughts and emotions can lead to confusion, stress, and unnecessary reactions.
+      </p>
+
+      <p>
+        Effective React applications encourage developers to maintain clean and predictable state management. Similarly, self-awareness encourages us to observe and understand our internal states before reacting impulsively to external events.
+      </p>
+
+      <p>
+        Perhaps true mental clarity arises when we become conscious of this process. Instead of immediately reacting every time reality differs from our expectations, we can pause, examine our internal model, and determine whether the update is truly necessary.
+      </p>
+
+      <p>
+        React does not re-render everything indiscriminately. It carefully evaluates what has changed and updates only what is required. Likewise, wisdom may involve responding thoughtfully rather than allowing every perceived mismatch to trigger a complete emotional re-render of our inner world.
+      </p>
+
+      <p>
+        By recognizing this parallel between technology and consciousness, we gain a deeper appreciation for both. React teaches us the value of efficient state management and selective updates, while life teaches us the importance of awareness, adaptability, and balance.
+      </p>
+
+      <p>
+        In the end, maintaining a harmonious mind may not be very different from maintaining a well-designed React application: understand your state, observe the differences carefully, and update only what truly needs to change.
+      </p>
+
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+        </div>
+
+        <div class="w3-col m4 w3-hide-small">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<br>
+
+</div>
+
+<script>
+
+function readMore(clickId) {
+  var dotsList = document.querySelectorAll("#dots");
+  var moreTextList = document.querySelectorAll("#more");
+  var btnTextList = document.querySelectorAll("#readMoreBTN");
+
+  if (dotsList[clickId].style.display === "none") {
+    dotsList[clickId].style.display = "inline";
+    btnTextList[clickId].innerHTML = "Read more";
+    moreTextList[clickId].style.display = "none";
+  } else {
+    dotsList[clickId].style.display = "none";
+    btnTextList[clickId].innerHTML = "Read less";
+    moreTextList[clickId].style.display = "inline";
+  }
+}
+
+document.onkeydown = function(e) {
+if(event.keyCode == 123) {
+return false;
+}
+if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+return false;
+}
+if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+return false;
+}
+if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+return false;
+}
+if(e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)){
+return false;
+}
+}
+
+</script>
+
+</body>
+</html>
