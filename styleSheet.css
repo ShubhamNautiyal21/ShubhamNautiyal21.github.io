@@ -266,3 +266,280 @@ a {
         margin-inline: auto;
     }
 }
+
+
+/* ========================================= */
+/* MYSTICAL / COSMIC ENHANCEMENTS */
+/* ========================================= */
+
+/* Entire page cosmic breathing */
+body{
+    animation: cosmicAura 12s ease-in-out infinite alternate;
+}
+
+@keyframes cosmicAura{
+    0%{
+        filter:hue-rotate(0deg);
+    }
+
+    100%{
+        filter:hue-rotate(6deg);
+    }
+}
+
+/* Universe background slow zoom */
+.bgimg-1{
+    animation: universeZoom 25s ease-in-out infinite alternate;
+}
+
+@keyframes universeZoom{
+    0%{
+        background-size:100%;
+    }
+
+    100%{
+        background-size:110%;
+    }
+}
+
+/* Animated mystical navbar */
+.ColorMain{
+    background-size:200% 200% !important;
+    animation: navbarFlow 10s ease infinite;
+}
+
+@keyframes navbarFlow{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* Headings glow */
+#blog h2,
+#about h2{
+    letter-spacing:4px;
+
+    text-shadow:
+        0 0 5px rgba(255,255,255,0.7),
+        0 0 15px rgba(128,0,128,0.5),
+        0 0 30px rgba(0,0,255,0.25);
+}
+
+/* Banner glow */
+#banner{
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.9),
+        0 0 25px rgba(128,0,128,0.4),
+        0 0 45px rgba(0,128,255,0.25);
+}
+
+/* Card divine background */
+#blog .w3-card-4{
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,1),
+        rgba(250,248,255,1)
+    );
+
+    border:1px solid rgba(128,0,128,0.15);
+
+    backdrop-filter:blur(3px);
+
+    box-shadow:
+        0 0 10px rgba(128,0,128,0.06);
+}
+
+/* Floating card effect */
+#blog .w3-card-4{
+    animation: floatCard 6s ease-in-out infinite;
+}
+
+@keyframes floatCard{
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-4px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* Premium hover */
+#blog .w3-card-4:hover{
+    transform:translateY(-8px) scale(1.02);
+
+    box-shadow:
+        0 0 20px rgba(128,0,128,0.25),
+        0 0 40px rgba(0,0,255,0.15),
+        0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* Blog title glow */
+#blog h3{
+    transition:all .4s ease;
+}
+
+#blog .w3-card-4:hover h3{
+    color:#5e2ca5;
+
+    text-shadow:
+        0 0 8px rgba(128,0,128,0.4);
+}
+
+/* Read More button */
+#blog button{
+    transition:all .3s ease;
+}
+
+#blog button:hover{
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,255,.9),
+            rgba(128,0,128,.9)
+        ) !important;
+
+    transform:scale(1.08);
+
+    box-shadow:
+        0 0 15px rgba(128,0,128,0.4);
+}
+
+/* Navigation links */
+.w3-bar a{
+    transition:0.3s;
+}
+
+.w3-bar a:hover{
+    text-shadow:
+        0 0 8px rgba(255,255,255,0.8),
+        0 0 15px rgba(128,0,128,0.4);
+}
+
+/* About section glass style */
+#about{
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.82),
+            rgba(255,255,255,0.92)
+        );
+
+    backdrop-filter:blur(5px);
+}
+
+/* Smooth section reveal */
+#blog,
+#about{
+    animation:fadeInUp 1.4s ease;
+}
+
+@keyframes fadeInUp{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0px);
+    }
+}
+
+/* Arrow glow */
+.more{
+    box-shadow:
+        0 0 15px rgba(255,255,255,0.25),
+        0 0 30px rgba(128,0,128,0.15);
+}
+
+.more:hover{
+    box-shadow:
+        0 0 25px rgba(255,255,255,0.5),
+        0 0 45px rgba(128,0,128,0.25);
+}
+
+/* Links glow */
+a{
+    transition:0.3s;
+}
+
+a:hover{
+    text-shadow:
+        0 0 8px rgba(128,0,128,0.3);
+}
+
+/* Modern scrollbar */
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111;
+}
+
+::-webkit-scrollbar-thumb{
+    background:
+        linear-gradient(
+            rgba(0,0,255,.8),
+            rgba(128,0,128,.8)
+        );
+
+    border-radius:25px;
+}
+
+/* Cosmic star overlay */
+html::before{
+    content:"";
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+
+    background:
+        radial-gradient(circle at 15% 25%, rgba(255,255,255,.08) 0%, transparent 15%),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,.07) 0%, transparent 12%),
+        radial-gradient(circle at 60% 75%, rgba(255,255,255,.08) 0%, transparent 18%),
+        radial-gradient(circle at 30% 90%, rgba(255,255,255,.06) 0%, transparent 15%);
+
+    animation:starShimmer 15s linear infinite;
+
+    z-index:999;
+}
+
+@keyframes starShimmer{
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-30px);
+    }
+}
+
+/* Paragraph readability */
+p{
+    text-shadow:
+        0 1px 1px rgba(255,255,255,0.15);
+}
+
+/* Soft glow around page sections */
+#blog,
+#about{
+    box-shadow:
+        0 0 30px rgba(128,0,128,0.03);
+}
