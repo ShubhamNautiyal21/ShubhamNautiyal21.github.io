@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SRE Incident Operational Terminal v2.0</title>
+
+<style>
+:root {
+  --bg-main: #090d16;
+  --bg-surface: #111a2e;
+  --bg-card: #1e293b;
+  --neon-cyan: #00f2fe;
+  --neon-blue: #4facfe;
+  --neon-green: #00ff87;
+  --neon-red: #ff5858;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+  background: var(--bg-main);
+  background-image:
+    radial-gradient(at 0% 0%, rgba(79, 172, 254, 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(0, 242, 254, 0.1) 0px, transparent 50%);
+
+  color: var(--text-main);
+
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px;
+
+  overflow: hidden;
+}
+
+.container {
+  width: min(95vw, 1400px);
+  height: 95vh;
+
+  background: var(--bg-surface);
+  padding: 24px;
+
+  border-radius: 16px;
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  box-shadow: 0 0 50px rgba(0, 242, 254, 0.1);
+
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  letter-spacing: 4px;
+  background: linear-gradient(135deg, var(--text-main), var(--neon-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.stats {
+  margin-bottom: 20px;
+}
+.card {
+  background: rgba(30, 41, 59, 0.5);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid rgba(255,255,255,0.05);
+  font-size: 1.1rem;
+}
+
+.card span {
+  color: var(--neon-cyan);
+  display: block;
+  font-size: 1.5rem;
+  margin-top: 5px;
+}
+
+.word {
+  width: 100%;
+  text-align: center;
+
+  font-size: clamp(24px, 2.5vw, 58px);
+
+  font-weight: bold;
+  line-height: 1.3;
+
+  letter-spacing: 3px;
+
+  color: var(--text-main);
+  text-shadow: 0 0 10px rgba(255,255,255,0.2);
+
+  white-space: normal;
+  word-break: break-word;
+}
+
+
+
+.hints {
+  flex-shrink: 0;
+  margin-bottom: 20px;
+}
+
+.hints h3 {
+  margin-bottom: 15px;
+  color: var(--neon-cyan);
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hint {
+  margin: 12px 0;
+  color: white;
+  line-height: 1.4;
+  font-size: 1.2rem;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 8px;
+}
+
+@media (min-width: 1920px) {
+
+  .container {
+    max-width: 1700px;
+  }
+
+  .word {
+    font-size: 72px;
+  }
+
+  .key {
+    padding: 18px;
+    font-size: 1.3rem;
+  }
+}
+
+
+.key {
+  padding: 14px 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  cursor: pointer;
+  background: var(--bg-card);
+  color: var(--text-main);
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.key:hover:not(:disabled) {
+  background: var(--neon-blue);
+  color: var(--bg-main);
+  box-shadow: 0 0 15px var(--neon-blue);
+  transform: translateY(-2px);
+}
+
+.key:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.correct {
+  background: var(--neon-green) !important;
+  color: var(--bg-main) !important;
+  box-shadow: 0 0 15px var(--neon-green);
+  border-color: var(--neon-green) !important;
+}
+
+.wrong {
+  background: var(--neon-red) !important;
+  color: var(--text-main) !important;
+  box-shadow: 0 0 15px var(--neon-red);
+  border-color: var(--neon-red) !important;
+}
+
+.result {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 25px 0;
+  min-height: 40px;
+  letter-spacing: 1px;
+}
+
+.actions {
+  display: flex;
+  gap: 15px;
+}
+
+.actions button {
+  flex: 1;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.next {
+  background: linear-gradient(135deg, var(--neon-blue), var(--neon-cyan));
+  color: var(--bg-main);
+}
+
+.next:hover {
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.6);
+  transform: scale(1.02);
+}
+
+.restart {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.restart:hover {
+  background: rgba(255,255,255,0.05);
+  color: var(--text-main);
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
+}
+
+.shake {
+  animation: shake 0.3s ease;
+}
+</style>
+</head>
+<body>
+
+<div class="container" id="gameContainer">
+
+  <h1>⚡ SRE Incident Operational Terminal ⚡</h1>
+
+  <div class="stats">
+    <div class="card">LIVES <span id="lives">3</span></div>
+  </div>
+
+  <div class="word-container">
+    <div id="word" class="word"></div>
+  </div>
+
+  <div class="hints">
+    <h3>[SYSTEM_DIAGNOSTICS]</h3>
+    <div class="hint" id="hint1"></div>
+    <div class="hint" id="hint2"></div>
+    <div class="hint" id="hint3"></div>
+  </div>
+
+  <div id="keyboard" class="keyboard"></div>
+
+  <div id="result" class="result"></div>
+
+  <div class="actions">
+    <!-- <button class="restart" onclick="restartGame()">Reset Node</button>
+    <button class="next" onclick="nextWord()">Next Incident</button> -->
+  </div>
+
+</div>
+
+<script>
+
+const questions = [
+
+{
+word:"MESSAGE QUOTA",
+hints:[
+"IoT Hub quota alert",
+"Daily usage nearing limit",
+"Severity 1"
+]
+},
+{
+word:"CONNECTED DEVICES",
+hints:[
+"IoT Hub alert",
+"Connected devices dropped",
+"Runbook available"
+]
+},
+{
+word:"LOGIN LATENCY",
+hints:[
+"Authentication related",
+"Greater than 5 seconds",
+"Escalate to L2"
+]
+},
+{
+word:"SERVICE BUS",
+hints:[
+"Queue processing issue",
+"Screenshot required",
+"Messaging platform alert"
+]
+},
+{
+word:"DEADLETTER",
+hints:[
+"Failed message handling",
+"Service Bus related",
+"Deadletter entity involved"
+]
+},
+{
+word:"TYPE ERRORS",
+hints:[
+"JavaScript issue",
+"Runtime exception",
+"Defect creation common"
+]
+},
+{
+word:"HELP PORTAL AVAILABILITY",
+hints:[
+"Portal monitoring alert",
+"Failed locations detected for Help ",
+"Availability issue"
+]
+},
+{
+word:"PORTAL AVAILABILITY",
+hints:[
+"Portal issue",
+"Availability failure",
+"Monitoring alert"
+]
+},
+{
+word:"PORTALSERVICE AVAILABILITY",
+hints:[
+"Portal API issue",
+"Synthetic check failed",
+"Availability monitoring"
+]
+},
+
+{
+word:"IDPRODUCER",
+hints:[
+"Gateway issue",
+"High error responses",
+"Severity 1"
+]
+},
+{
+word:"TWIN UPDATES",
+hints:[
+"IoT device twins",
+"More than 500 failures",
+"Device update problem"
+]
+},
+
+{
+word:"FAILED REQUESTS",
+hints:[
+"More than 500 failures",
+"KQL investigation",
+"Severity 2"
+]
+},
+{
+word:"DEADLETTER MESSAGES",
+hints:[
+"Messages stuck",
+"Queue related",
+"High volume alert"
+]
+},
+{
+word:"ACTIVE MESSAGES",
+hints:[
+"Queue growth",
+"More than 1000 messages",
+"Service Bus"
+]
+},
+{
+word:"DATABASE FAILURES",
+hints:[
+"MongoDB errors",
+"Operation failures",
+"Trace required"
+]
+},
+{
+word:"SB THROTTLING",
+hints:[
+"Too many requests",
+"Entity metrics required",
+"Resource limitation"
+]
+},
+{
+word:"DEVICE CLOUD MESSAGES",
+hints:[
+"Device traffic spike",
+"More than 500 per minute",
+"IoT alert"
+]
+},
+{
+word:"FUNCTION ERRORS",
+hints:[
+"Azure Functions",
+"Trace analysis needed",
+"Serverless issue"
+]
+},
+{
+word:"BROWSER 500 ERRORS",
+hints:[
+"Frontend failure",
+"Redirected to 500 page",
+"User visible"
+]
+},
+{
+word:"SERVER 500 ERRORS",
+hints:[
+"Backend errors",
+"HTTP code begins with 5",
+"Common production alert"
+]
+},
+
+{
+word:"LOG ANALYTICS",
+hints:[
+"Ingestion issue",
+"Monitoring platform",
+"Rate exceeded threshold"
+]
+},
+{
+word:"DATA BACKUP",
+hints:[
+"Failed trigger",
+"Data Factory involved",
+"Backup process issue"
+]
+},
+{
+word:"APIM CAPACITY",
+hints:[
+"API Management",
+"Near service limit",
+"Gateway related"
+]
+},
+{
+word:"APIM POLICY ERRORS",
+hints:[
+"Gateway policy failure",
+"Expression issue",
+"APIM related"
+]
+},
+{
+word:"DNS UTILIZATION",
+hints:[
+"Zone record capacity",
+"Infrastructure issue",
+"DNS related"
+]
+},
+{
+word:"PARTITION SIZE",
+hints:[
+"Database concern",
+"Query returned rows",
+"Storage related Size"
+]
+},
+{
+word:"STAGING DNS UTILIZATION",
+hints:[
+"DNS capacity",
+"Staging environment",
+"Infrastructure alert"
+]
+},
+{
+word:"SCHEDULE INTERVALS",
+hints:[
+"Configuration issue",
+"Too many schedules",
+"Unsupported count"
+]
+},
+{
+word:"TOTAL CONNECTION COUNT",
+hints:[
+"More than 800",
+"WPS environment",
+"Connection metric"
+]
+},
+{
+word:"DEVICE TREE LATENCY",
+hints:[
+"Portal performance",
+"More than 3 seconds",
+"Tree loading issue"
+]
+},
+{
+word:"DEVICE DETAIL LATENCY",
+hints:[
+"Portal performance",
+"Detail page loading",
+"More than 3 seconds"
+]
+},
+{
+word:"EVENT LATENCY",
+hints:[
+"Processing delay",
+"More than 5 seconds",
+"Customer impact"
+]
+},
+{
+word:"LOGIN ERRORS",
+hints:[
+"Authentication issue",
+"Failed login rate",
+"Customer visible"
+]
+},
+{
+word:"COMMAND LATENCY",
+hints:[
+"Device commands",
+"More than 5 seconds",
+"Trace analysis needed"
+]
+},
+{
+word:"FIRMWARE LATENCY",
+hints:[
+"Update process",
+"Command delay",
+"Firmware related"
+]
+},
+{
+word:"STORAGE TRANSACTIONS",
+hints:[
+"Storage account metric",
+"Transaction threshold",
+"Infrastructure alert"
+]
+},
+{
+word:"STORAGE EGRESS",
+hints:[
+"Storage traffic",
+"Outbound data",
+"Threshold exceeded"
+]
+},
+{
+word:"STORAGE CAPACITY HIGH",
+hints:[
+"Used capacity exceeded",
+"Storage account",
+"Infrastructure issue"
+]
+},
+{
+word:"STORAGE CAPACITY LOW",
+hints:[
+"Below expected threshold",
+"Storage account",
+"Capacity alert"
+]
+},
+{
+word:"CACHE SIZE",
+hints:[
+"In-memory cache",
+"Greater than 40 MB",
+"Application issue"
+]
+},
+{
+word:"SERVICE BUS DISPOSITION",
+hints:[
+"Messaging platform",
+"Customer details needed",
+"Trace required"
+]
+},
+{
+word:"CUSTOMER LOGIN ERRORS",
+hints:[
+"Portal sign in issue",
+"Customer facing",
+"Runbook available"
+]
+}
+,
+{
+word:"BROWSER ERRORS",
+hints:[
+"Frontend issue",
+"Most frequent alert category",
+"Over 300 alerts last month"
+]
+},
+{
+word:"BROWSER CSP ERRORS",
+hints:[
+"Security policy issue",
+"Browser generated",
+"Frontend related"
+]
+},
+{
+word:"DEPENDENCY ERRORS",
+hints:[
+"External service failure",
+"Downstream dependency",
+"Runbook available"
+]
+},
+{
+word:"BFF ERRORS",
+hints:[
+"Backend for Frontend",
+"Portal issue",
+"Screenshot usually required"
+]
+},
+{
+word:"APIM MIGRATION",
+hints:[
+"Migration API",
+"API Management related",
+"Escalate to L2"
+]
+},
+{
+word:"FUNCTION TIMEOUT",
+hints:[
+"Serverless workload",
+"Execution exceeded duration",
+"Trace analysis required"
+]
+},
+
+{
+word:"DPREM CPU",
+hints:[
+"Linux App Service",
+"High processor usage",
+"Infrastructure alert"
+]
+},
+{
+word:"DPREM MEMORY",
+hints:[
+"Linux App Service",
+"RAM utilization high",
+"Resource utilization"
+]
+},
+{
+word:"DPREM TCP",
+hints:[
+"Linux App Service",
+"Established connections",
+"Network related"
+]
+},
+{
+word:"IDPRODUCER CPU",
+hints:[
+"IDProducer environment",
+"Processor utilization",
+"App Service Plan"
+]
+},
+{
+word:"IDPRODUCER MEMORY",
+hints:[
+"IDProducer environment",
+"Memory utilization",
+"App Service Plan"
+]
+},
+{
+word:"IDPRODUCER TCP",
+hints:[
+"IDProducer environment",
+"TCP connections",
+"Infrastructure alert"
+]
+},
+{
+word:"LOGIC APP FAILURE",
+hints:[
+"Workflow run failed",
+"Azure integration",
+"Automation related"
+]
+},
+{
+word:"STATUSPAGE ANOMALY",
+hints:[
+"Smart detector",
+"Failure anomaly",
+"Status page monitoring"
+]
+},
+{
+word:"FUNCTION APP ANOMALY",
+hints:[
+"Smart detector",
+"Failure pattern",
+"Monitoring function app"
+]
+},
+{
+word:"APPLICATION INSIGHTS ANOMALY",
+hints:[
+"AI powered alert",
+"Failure anomaly",
+"Application Insights"
+]
+},
+{
+word:"ALERT PROCESSING ANOMALY",
+hints:[
+"Failure anomaly",
+"Smart detection",
+"Alert processing pipeline"
+]
+},
+{
+word:"DEVICE QUEUE DEPTH",
+hints:[
+"Queue exceeded limit",
+"Device processing",
+"Severity 4"
+]
+},
+{
+word:"AZURE HEALTH ALERT",
+hints:[
+"Microsoft generated alert",
+"Service Health event",
+"Platform issue"
+]
+},
+{
+word:"KEYVAULT CONNECTION",
+hints:[
+"Secrets management",
+"Connection problem",
+"Infrastructure related"
+]
+},
+{
+word:"MERAKI STATUS ISSUE",
+hints:[
+"Cisco integration",
+"Device status problem",
+"Severity 4"
+]
+},
+{
+word:"FAILURE ANOMALY",
+hints:[
+"Smart detector",
+"Unexpected failure pattern",
+"AI generated alert"
+]
+},
+{
+word:"STATUSPAGE",
+hints:[
+"Smart monitoring",
+"StatusPage resource",
+"Failure anomaly detected"
+]
+},
+{
+word:"FUNCTION APP",
+hints:[
+"Serverless monitoring",
+"Failure anomaly",
+"Smart alert"
+]
+},
+{
+word:"APPLICATION INSIGHTS",
+hints:[
+"Telemetry platform",
+"Failure anomaly",
+"AI detected issue"
+]
+},
+{
+word:"DEVICE QUEUE DEPTH",
+hints:[
+"Queue exceeded threshold",
+"Device related",
+"Severity 4"
+]
+},
+{
+word:"LOGIC APP FAILURE",
+hints:[
+"Workflow execution failed",
+"Azure integration",
+"Automation issue"
+]
+},
+{
+word:"PORTAL AVAILABILITY",
+hints:[
+"User facing service",
+"Synthetic monitoring",
+"Availability failed"
+]
+},
+{
+word:"HELP PORTAL AVAILABILITY",
+hints:[
+"Support portal",
+"Availability monitoring",
+"Failed from locations"
+]
+},
+{
+word:"MANAGEMENT PORTAL",
+hints:[
+"Administration interface",
+"Availability related",
+"Portal service"
+]
+},
+{
+word:"TWILIO",
+hints:[
+"External dependency",
+"Communication service",
+"Availability monitoring"
+]
+},
+{
+word:"BADGE PRINTING",
+hints:[
+"Demo environment",
+"Availability check",
+"Printing related"
+]
+},
+
+{
+word:"DEVICE DNS UTILIZATION",
+hints:[
+"DNS records",
+"Zone nearing capacity",
+"Infrastructure alert"
+]
+},
+{
+word:"APIM MIGRATION API",
+hints:[
+"API Management",
+"Migration endpoint",
+"Escalate L2"
+]
+},
+{
+word:"CUSTOMER RESELLER",
+hints:[
+"Portal access issue",
+"Authentication related",
+"Customer facing"
+]
+},
+{
+word:"MESSAGE QUOTA",
+hints:[
+"IoT Hub",
+"Approaching daily limit",
+"Usage related"
+]
+},
+{
+word:"CONNECTED DEVICES",
+hints:[
+"IoT platform",
+"Below expected count",
+"Connectivity issue"
+]
+}
+
+];
+
+let currentQuestion;
+let guessedLetters=[];
+let wrongAttempts=0;
+
+
+function randomQuestion(){
+return questions[Math.floor(Math.random()*questions.length)];
+}
+
+function startRound(){
+
+currentQuestion=randomQuestion();
+guessedLetters=[];
+wrongAttempts=0;
+
+document.getElementById("lives").textContent=3;
+document.getElementById("result").textContent="";
+
+document.getElementById("hint1").textContent=
+"Hint 1: " + currentQuestion.hints[0];
+
+document.getElementById("hint2").textContent=
+"Hint 2: " + currentQuestion.hints[1];
+
+document.getElementById("hint3").textContent=
+"Hint 3: " + currentQuestion.hints[2];
+
+document.getElementById("hint2").style.display="none";
+document.getElementById("hint3").style.display="none";
+
+generateKeyboard();
+updateWord();
+}
+
+function updateWord() {
+
+    let display = "";
+
+    for (const char of currentQuestion.word) {
+
+        if (char === " ") {
+
+            display += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+
+        } else if (guessedLetters.includes(char)) {
+
+            display += char + " ";
+
+        } else {
+
+           display += "_ ";
+        }
+    }
+
+    document.getElementById("word").innerHTML =
+        display;
+
+    checkWin();
+}
+
+function guess(letter,button){
+
+if(guessedLetters.includes(letter)) return;
+
+guessedLetters.push(letter);
+
+if(currentQuestion.word.includes(letter)){
+
+button.classList.add("correct");
+
+updateWord();
+
+}else{
+
+button.classList.add("wrong");
+
+wrongAttempts++;
+
+let lives = Math.max(0, 3 - wrongAttempts);
+
+document.getElementById("lives").textContent=lives;
+
+if(wrongAttempts===1){
+document.getElementById("hint2").style.display="block";
+}
+
+if(wrongAttempts===2){
+document.getElementById("hint3").style.display="block";
+}
+
+if(wrongAttempts>=3){
+
+document.getElementById("result").style.color =
+    "var(--neon-red)";
+
+document.getElementById("result").innerHTML =
+    "INCIDENT FAILED<br><br>" +
+    "Answer: <strong>" +
+    currentQuestion.word +
+    "</strong>";
+disableKeyboard();
+}
+}
+
+button.disabled=true;
+}
+
+function checkWin() {
+
+    const answerLetters = [
+        ...new Set(
+            currentQuestion.word
+                .replace(/\s/g, "")
+                .split("")
+        )
+    ];
+
+    const won = answerLetters.every(letter =>
+        guessedLetters.includes(letter)
+    );
+
+    if (won) {
+
+        document.getElementById("result").style.color =
+            "var(--neon-green)";
+
+        document.getElementById("result").innerHTML =
+            "🎉 INCIDENT RESOLVED! 🎉<br><br>" +
+            currentQuestion.word;
+
+        disableKeyboard();
+    }
+}
+
+function disableKeyboard(){
+
+document
+.querySelectorAll(".key")
+.forEach(btn=>btn.disabled=true);
+}
+
+function generateKeyboard(){
+
+    const keyboard =
+        document.getElementById("keyboard");
+
+    keyboard.innerHTML = "";
+
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+    for(const char of chars){
+
+        let btn = document.createElement("button");
+
+        btn.className = "key";
+
+        btn.textContent = char;
+
+        btn.onclick = () => guess(char, btn);
+
+        keyboard.appendChild(btn);
+    }
+}
+
+
+
+
+
+
+startRound();
+
+</script>
+
+</body>
+</html>
