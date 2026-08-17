@@ -68,8 +68,7 @@ h1 {
   font-size: clamp(1.4rem, 2vw, 2rem);
   letter-spacing: 4px;
   background: linear-gradient(135deg, var(--text-main), var(--neon-cyan));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color : rgba(0, 252, 254, 250);
   margin-bottom: 15px;
   text-transform: uppercase;
 }
@@ -157,10 +156,10 @@ h1 {
 }
 @media (max-width: 768px) {
   .keyboard {
-    grid-template-columns: repeat(7, 1fr); /* Restructures keys on mobile */
+    grid-template-columns: repeat(7, 1fr);
   }
   .container {
-    max-height: none; /* Allows free document flow on mobile viewports */
+    max-height: none; 
   }
 }
 
@@ -212,13 +211,12 @@ h1 {
   background-color: rgba(0, 0, 0, 0.85);
   color: #ffffff;
   
-  /* Change this to none so it is hidden at the start */
   display: none; 
   
-  /* Keeping your layout centering styles */
+
   justify-content: center;
   align-items: center;
-  text-align: center; /* Ensures multi-line text is centered */
+  text-align: center;
   font-size: 24px;
   font-weight: bold;
   letter-spacing: 1px;
@@ -278,7 +276,7 @@ h1 {
 
 <div class="container" id="gameContainer">
 
-  <h1>⚡ SRE Incident Operational Terminal ⚡</h1>
+ <h1 style="color: rgba(0, 0, 0, 0.824)">⚡ SRE Incident Operational Terminal ⚡</h1>
 
   <div class="stats">
     <div class="card">LIVES <span id="lives">3</span></div>
