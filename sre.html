@@ -41,12 +41,13 @@ body {
 
   padding: 10px;
 
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 .container {
-  width: min(95vw, 1400px);
-  height: 95vh;
+   width: min(95vw, 1400px);
+  min-height: 85vh;
+  max-height: 95vh; 
 
   background: var(--bg-surface);
   padding: 24px;
@@ -154,7 +155,14 @@ h1 {
     font-size: 1.3rem;
   }
 }
-
+@media (max-width: 768px) {
+  .keyboard {
+    grid-template-columns: repeat(7, 1fr); /* Restructures keys on mobile */
+  }
+  .container {
+    max-height: none; /* Allows free document flow on mobile viewports */
+  }
+}
 
 .key {
   padding: 14px 8px;
@@ -195,11 +203,24 @@ h1 {
 }
 
 .result {
-  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #ffffff;
+  
+  /* Change this to none so it is hidden at the start */
+  display: none; 
+  
+  /* Keeping your layout centering styles */
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Ensures multi-line text is centered */
   font-size: 24px;
   font-weight: bold;
-  margin: 25px 0;
-  min-height: 40px;
   letter-spacing: 1px;
 }
 
@@ -915,6 +936,7 @@ guessedLetters=[];
 wrongAttempts=0;
 
 document.getElementById("lives").textContent=3;
+document.getElementById("result").style.display = "none";
 document.getElementById("result").textContent="";
 
 document.getElementById("hint1").textContent=
@@ -990,15 +1012,20 @@ document.getElementById("hint3").style.display="block";
 }
 
 if(wrongAttempts>=3){
-
+document.getElementById("result").style.display = "flex";
 document.getElementById("result").style.color =
     "var(--neon-red)";
 
+
+
 document.getElementById("result").innerHTML =
-    "INCIDENT FAILED<br><br>" +
-    "Answer: <strong>" +
-    currentQuestion.word +
-    "</strong>";
+            "🎉 INCIDENT RESOLVED! 🎉<br><br>" +
+            currentQuestion.word;
+
+
+document.getElementById("result").innerHTML =
+    "INCIDENT FAILED! <br><br>" +
+    currentQuestion.word
 disableKeyboard();
 }
 }
@@ -1021,7 +1048,7 @@ function checkWin() {
     );
 
     if (won) {
-
+document.getElementById("result").style.display = "flex";
         document.getElementById("result").style.color =
             "var(--neon-green)";
 
